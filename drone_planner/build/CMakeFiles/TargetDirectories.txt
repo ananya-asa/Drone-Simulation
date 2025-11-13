@@ -1,0 +1,3 @@
+/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/uav_planner.dir
+/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/rebuild_cache.dir
