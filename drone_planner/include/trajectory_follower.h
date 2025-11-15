@@ -1,25 +1,29 @@
-#pragma once
+#ifndef TRAJECTORY_FOLLOWER_H
+#define TRAJECTORY_FOLLOWER_H
 
-#include <vector>
 #include <memory>
+#include <vector>
 #include <Eigen/Dense>
-#include <mavsdk/plugins/telemetry/telemetry.h>
 #include <mavsdk/plugins/offboard/offboard.h>
+#include <mavsdk/plugins/telemetry/telemetry.h>
 
 class TrajectoryFollower {
 public:
-    TrajectoryFollower(std::shared_ptr<mavsdk::Telemetry> telemetry,
-                       std::shared_ptr<mavsdk::Offboard> offboard,
-                       const std::vector<Eigen::Vector3i>& path,
-                       double resolution);
+    TrajectoryFollower(
+        std::shared_ptr<mavsdk::Telemetry> telemetry,
+        std::shared_ptr<mavsdk::Offboard> offboard,
+        const std::vector<Eigen::Vector3i>& path_grid,
+        double resolution
+    );
 
     void start();
 
 private:
-    std::shared_ptr<mavsdk::Telemetry> _telemetry;
-    std::shared_ptr<mavsdk::Offboard> _offboard;
-    std::vector<Eigen::Vector3i> _path;
-    double _resolution;
-
-    double get_distance_to_target(const Eigen::Vector3i& target_grid);
+    // Member variables
+    std::shared_ptr<mavsdk::Telemetry> telemetry_;
+    std::shared_ptr<mavsdk::Offboard> offboard_;
+    std::vector<Eigen::Vector3i> path_grid_;
+    double resolution_;
 };
+
+#endif // TRAJECTORY_FOLLOWER_H

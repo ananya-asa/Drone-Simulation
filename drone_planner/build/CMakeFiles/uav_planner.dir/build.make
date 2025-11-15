@@ -149,7 +149,6 @@ uav_planner: /usr/lib/x86_64-linux-gnu/libOpenNI2.so
 uav_planner: /usr/lib/x86_64-linux-gnu/libusb-1.0.so
 uav_planner: /usr/lib/x86_64-linux-gnu/libflann_cpp.so.1.9.2
 uav_planner: /usr/lib/libmavsdk.so.3.10.2
-uav_planner: /usr/lib/x86_64-linux-gnu/libgz-transport13.so.13.5.0
 uav_planner: /usr/lib/x86_64-linux-gnu/libpcl_surface.so
 uav_planner: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so
 uav_planner: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so
@@ -229,14 +228,6 @@ uav_planner: /usr/lib/x86_64-linux-gnu/libboost_serialization.so.1.83.0
 uav_planner: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a
 uav_planner: /usr/lib/x86_64-linux-gnu/liblz4.so
 uav_planner: /usr/lib/x86_64-linux-gnu/libqhull_r.so.8.0.2
-uav_planner: /usr/lib/x86_64-linux-gnu/libgz-msgs10.so.10.3.2
-uav_planner: /usr/lib/x86_64-linux-gnu/libgz-math7.so.7.5.1
-uav_planner: /usr/lib/x86_64-linux-gnu/libgz-utils2.so.2.2.1
-uav_planner: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-uav_planner: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-uav_planner: /usr/lib/x86_64-linux-gnu/libprotobuf.so
-uav_planner: /usr/lib/x86_64-linux-gnu/libuuid.so
-uav_planner: /usr/lib/x86_64-linux-gnu/libuuid.so
 uav_planner: CMakeFiles/uav_planner.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable uav_planner"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/uav_planner.dir/link.txt --verbose=$(VERBOSE)

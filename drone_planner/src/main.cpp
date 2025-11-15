@@ -3,7 +3,6 @@
 #include <thread>
 #include <chrono>
 #include <future>
-#include <atomic> // For std::atomic_bool
 
 // MAVSDK Includes
 #include <mavsdk/mavsdk.h>
@@ -14,59 +13,25 @@
 // Our Project Includes
 #include "path_planner.h"
 #include "world_model.h"
-#include "trajectory_follower.h" 
-
-// Gazebo Bridge Includes
-#include <gz/transport/Node.hh>
-#include <gz/msgs/pointcloud_packed.pb.h>
-
-// PCL Includes (for data conversion)
-#include <pcl/point_cloud.h>
-#include <pcl/point_types.h>
+#include "trajectory_follower.h"
 
 using namespace mavsdk;
 using namespace std::this_thread;
 using namespace std::chrono;
 
-// --- Global variables for our live data ---
-// We make these global so the callback can update them
-// and the main loop can read them.
-pcl::PointCloud<pcl::PointXYZ>::Ptr lidar_cloud(new pcl::PointCloud<pcl::PointXYZ>);
-std::mutex cloud_mutex; // A "lock" to prevent bugs
-std::atomic<bool> new_cloud_available(false); // A "flag"
-
-// --- LIDAR CALLBACK FUNCTION (THE "LIVE EYES") ---
-// This function will be called every time we get a LIDAR message
-void lidar_callback(const gz::msgs::PointCloudPacked &msg) {
-    
-    // 1. Create a temporary cloud to hold the new data
-    pcl::PointCloud<pcl::PointXYZ>::Ptr temp_cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    temp_cloud->width = msg.width() * msg.height();
-    temp_cloud->height = 1; // Unorganized point cloud
-    temp_cloud->points.resize(temp_cloud->width);
-
-    // 2. We must unpack the data
-    // The data is "packed" as 'x', 'y', 'z', 'intensity'
-    int point_step = msg.point_step();
-    for (unsigned int i = 0; i < temp_cloud->width; ++i) {
-        // We use 'memcpy' to copy the bytes
-        memcpy(&temp_cloud->points[i].x, &msg.data()[i * point_step], sizeof(float));
-        memcpy(&temp_cloud->points[i].y, &msg.data()[i * point_step + sizeof(float)], sizeof(float));
-        memcpy(&temp_cloud->points[i].z, &msg.data()[i * point_step + 2 * sizeof(float)], sizeof(float));
+// Helper function to create static test wall
+pcl::PointCloud<pcl::PointXYZ>::Ptr create_test_wall() {
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+    // Wall at x=0.5m
+    for (double y = -1.0; y <= 1.0; y += 0.1) {
+        for (double z = -1.0; z <= 1.0; z += 0.1) {
+            cloud->points.push_back(pcl::PointXYZ(0.5, y, z));
+        }
     }
-    
-    // 3. Lock the "global" cloud and update it
-    {
-        std::lock_guard<std::mutex> lock(cloud_mutex);
-        lidar_cloud = temp_cloud;
-    }
-    
-    // 4. Set the "flag" to tell the main loop there is new data
-    new_cloud_available = true;
+    std::cout << "Created test wall with " << cloud->points.size() << " points" << std::endl;
+    return cloud;
 }
-// ---
 
-// --- MAVSDK get_system function (same as before) ---
 std::shared_ptr<System> get_system(Mavsdk& mavsdk) {
     std::cout << "Waiting to discover drone..." << std::endl;
     auto prom = std::promise<std::shared_ptr<System>>();
@@ -88,29 +53,39 @@ std::shared_ptr<System> get_system(Mavsdk& mavsdk) {
     return fut.get();
 }
 
-
 int main() {
-    std::cout << "--- Autonomous Planner V3.0 (LIVE SENSOR) ---" << std::endl;
+    std::cout << "=== Autonomous Drone Planner V3.0 ===" << std::endl;
 
-    // =======================================================
-    // == PART 1: INITIALIZATION
-    // =======================================================
-    const double RESOLUTION = 0.2; // 20cm resolution (bigger for faster planning)
+    // Setup world model with static obstacle
+    const double RESOLUTION = 0.2;
     WorldModel world(RESOLUTION);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr wall = create_test_wall();
+    world.buildMap(wall);
 
-    // --- Start the Sensor Bridge ---
-    gz::transport::Node gz_node;
-    if (!gz_node.Subscribe("/lidar", lidar_callback)) {
-        std::cerr << "Failed to subscribe to /lidar topic" << std::endl;
+    // Define start and goal in grid coordinates
+    Eigen::Vector3i start_grid(0, 0, 0);
+    Eigen::Vector3i goal_grid(10, 0, 0); // 10 * 0.2m = 2m forward
+
+    std::cout << "\nPlanning path from (0,0,0) to (10,0,0) in grid space" << std::endl;
+    std::cout << "Wall is at x=0.5m (grid x=5)" << std::endl;
+
+    std::vector<Eigen::Vector3i> path_grid = A_star_search(start_grid, goal_grid, world);
+    
+    if (path_grid.empty()) {
+        std::cerr << "ERROR: No path found!" << std::endl;
         return 1;
     }
-    std::cout << "Sensor Bridge created. Subscribed to /lidar." << std::endl;
 
-    // --- Connect to the Drone ---
+    std::cout << "SUCCESS: Path found with " << path_grid.size() << " waypoints" << std::endl;
+
+    // Connect to PX4 SITL
     Mavsdk mavsdk(Mavsdk::Configuration(mavsdk::ComponentType::GroundStation));
-
     ConnectionResult conn_result = mavsdk.add_any_connection("udpin://0.0.0.0:14540");
-    if (conn_result != ConnectionResult::Success) { return 1; }
+    
+    if (conn_result != ConnectionResult::Success) {
+        std::cerr << "Connection failed: " << conn_result << std::endl;
+        return 1;
+    }
 
     auto system = get_system(mavsdk);
     if (!system) { return 1; }
@@ -119,84 +94,60 @@ int main() {
     auto offboard = std::make_shared<Offboard>(system);
     auto telemetry = std::make_shared<Telemetry>(system);
 
-    std::cout << "Waiting for drone to be ready to arm..." << std::endl;
+    // Wait for healthy state
+    std::cout << "Waiting for drone to be ready..." << std::endl;
     while (!telemetry->health_all_ok()) {
-        std::cout << "Drone not healthy yet..." << std::endl;
         sleep_for(seconds(1));
     }
 
-    // =======================================================
-    // == PART 2: FLIGHT PHASE (THE "LIVE" LOOP)
-    // =======================================================
-    std::cout << "Arming drone..." << std::endl;
-    action->arm();
+    // Arm and takeoff
+    std::cout << "Arming..." << std::endl;
+    if (action->arm() != Action::Result::Success) {
+        std::cerr << "Arming failed!" << std::endl;
+        return 1;
+    }
+
     std::cout << "Taking off..." << std::endl;
-    action->takeoff();
-    sleep_for(seconds(5)); // Wait for takeoff
-
-    std::cout << "Starting Offboard mode..." << std::endl;
-    Offboard::PositionNedYaw stay_still{};
-    stay_still.down_m = -2.5f; // Hold 2.5m altitude
-    offboard->set_position_ned(stay_still);
-    offboard->start();
-    std::cout << "Offboard mode started!" << std::endl;
-
-    // --- This is the new "live" loop ---
-    for (int i = 0; i < 5; ++i) { // Let's just run 5 times for this test
-        std::cout << "\n--- PLANNING LOOP " << i+1 << " ---" << std::endl;
-        
-        // 1. Wait for new sensor data
-        while(!new_cloud_available) {
-            sleep_for(milliseconds(10));
-        }
-
-        // 2. Get the new map
-        {
-            std::lock_guard<std::mutex> lock(cloud_mutex);
-            world.buildMap(lidar_cloud); // Build map from *live* data
-        }
-        new_cloud_available = false; // Reset the flag
-
-        // 3. Get our current position (as a grid cell)
-        Telemetry::PositionNed current_pos = telemetry->position_velocity_ned().position;
-        Eigen::Vector3i start_grid(
-            std::round(current_pos.north_m / RESOLUTION),
-            std::round(current_pos.east_m / RESOLUTION),
-            0 // We'll plan in 2D for now
-        );
-
-        // 4. Set a goal
-        Eigen::Vector3i goal_grid(10, 5, 0); // 10m North, 5m East
-        
-        std::cout << "Finding path from " << start_grid.transpose() 
-                  << " to " << goal_grid.transpose() << "..." << std::endl;
-
-        // 5. Plan the path
-        std::vector<Eigen::Vector3i> path_grid = A_star_search(start_grid, goal_grid, world);
-
-        if (path_grid.empty()) {
-            std::cerr << "PLANNING FAILED: No path was found." << std::endl;
-            sleep_for(seconds(1));
-            continue; // Try again
-        }
-        
-        std::cout << "PLAN SUCCESS! Path found with " << path_grid.size() << " steps." << std::endl;
-
-        // 6. Fly the path
-        TrajectoryFollower follower(telemetry, offboard, path_grid, RESOLUTION);
-        follower.start(); // This will fly the new path
+    if (action->takeoff() != Action::Result::Success) {
+        std::cerr << "Takeoff failed!" << std::endl;
+        return 1;
     }
-    // --- End of live loop ---
+    sleep_for(seconds(5));
 
-    std::cout << "Stopping Offboard mode and landing..." << std::endl;
-    offboard->stop();
-    action->land();
+    // Start offboard mode
+    std::cout << "Starting Offboard mode..." << std::endl;
+    Offboard::PositionNedYaw initial_setpoint{};
+    initial_setpoint.north_m = 0.0f;
+    initial_setpoint.east_m = 0.0f;
+    initial_setpoint.down_m = -2.5f;
+    initial_setpoint.yaw_deg = 0.0f;
     
+    offboard->set_position_ned(initial_setpoint);
+    
+    if (offboard->start() != Offboard::Result::Success) {
+        std::cerr << "Offboard start failed!" << std::endl;
+        return 1;
+    }
+    
+    sleep_for(seconds(2));
+    std::cout << "Offboard mode active!" << std::endl;
+
+    // Execute trajectory
+    std::cout << "\n=== Executing Planned Path ===" << std::endl;
+    TrajectoryFollower follower(telemetry, offboard, path_grid, RESOLUTION);
+    follower.start();
+
+    // Land
+    std::cout << "\n=== Landing ===" << std::endl;
+    offboard->stop();
+    sleep_for(seconds(2));
+    action->land();
+
     while (telemetry->in_air()) {
+        std::cout << "Landing..." << std::endl;
         sleep_for(seconds(1));
     }
-    std::cout << "Landed!" << std::endl;
-    std::cout << "\n[SUCCESS] V3.0 LIVE SENSOR TEST COMPLETE." << std::endl;
 
+    std::cout << "\n=== MISSION COMPLETE ===" << std::endl;
     return 0;
 }
