@@ -986,4 +986,103 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: \
  /usr/include/pcl-1.14/pcl/octree/octree_nodes.h \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
  /usr/include/pcl-1.14/pcl/octree/impl/octree_iterator.hpp \
- /mnt/c/Users/anany/OneDrive/Drone/drone_planner/include/trajectory_follower.h
+ /mnt/c/Users/anany/OneDrive/Drone/drone_planner/include/trajectory_follower.h \
+ /mnt/c/Users/anany/OneDrive/Drone/drone_planner/include/lidar_bridge.h \
+ /usr/include/gz/transport13/gz/transport/Node.hh \
+ /usr/include/c++/13/unordered_set \
+ /usr/include/c++/13/bits/unordered_set.h \
+ /usr/include/gz/transport13/gz/transport/AdvertiseOptions.hh \
+ /usr/include/gz/transport13/gz/transport/config.hh \
+ /usr/include/gz/transport13/gz/transport/Export.hh \
+ /usr/include/gz/transport13/gz/transport/detail/Export.hh \
+ /usr/include/gz/transport13/gz/transport/NodeOptions.hh \
+ /usr/include/gz/transport13/gz/transport/NodeShared.hh \
+ /usr/include/google/protobuf/message.h \
+ /usr/include/google/protobuf/stubs/casts.h \
+ /usr/include/google/protobuf/stubs/common.h /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/set \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h \
+ /usr/include/google/protobuf/stubs/macros.h \
+ /usr/include/google/protobuf/stubs/platform_macros.h \
+ /usr/include/google/protobuf/stubs/port.h \
+ /usr/include/google/protobuf/port_def.inc /usr/include/byteswap.h \
+ /usr/include/google/protobuf/port_undef.inc \
+ /usr/include/google/protobuf/stubs/stringpiece.h \
+ /usr/include/google/protobuf/stubs/hash.h \
+ /usr/include/google/protobuf/arena.h \
+ /usr/include/google/protobuf/arena_impl.h \
+ /usr/include/google/protobuf/stubs/logging.h \
+ /usr/include/google/protobuf/stubs/status.h \
+ /usr/include/google/protobuf/arenaz_sampler.h \
+ /usr/include/google/protobuf/port.h \
+ /usr/include/google/protobuf/descriptor.h \
+ /usr/include/google/protobuf/stubs/mutex.h \
+ /usr/include/google/protobuf/stubs/once.h \
+ /usr/include/google/protobuf/generated_message_reflection.h \
+ /usr/include/google/protobuf/generated_enum_reflection.h \
+ /usr/include/google/protobuf/stubs/strutil.h \
+ /usr/include/google/protobuf/generated_enum_util.h \
+ /usr/include/google/protobuf/message_lite.h \
+ /usr/include/google/protobuf/io/coded_stream.h \
+ /usr/include/google/protobuf/explicitly_constructed.h \
+ /usr/include/google/protobuf/metadata_lite.h \
+ /usr/include/google/protobuf/unknown_field_set.h \
+ /usr/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
+ /usr/include/google/protobuf/stubs/callback.h \
+ /usr/include/google/protobuf/io/zero_copy_stream.h \
+ /usr/include/google/protobuf/stubs/stl_util.h \
+ /usr/include/google/protobuf/parse_context.h \
+ /usr/include/google/protobuf/arenastring.h \
+ /usr/include/google/protobuf/endian.h \
+ /usr/include/google/protobuf/implicit_weak_message.h \
+ /usr/include/google/protobuf/repeated_field.h \
+ /usr/include/google/protobuf/repeated_ptr_field.h \
+ /usr/include/google/protobuf/inlined_string_field.h \
+ /usr/include/google/protobuf/wire_format_lite.h \
+ /usr/include/google/protobuf/generated_message_util.h \
+ /usr/include/google/protobuf/any.h \
+ /usr/include/google/protobuf/has_bits.h \
+ /usr/include/google/protobuf/map.h \
+ /usr/include/google/protobuf/map_type_handler.h \
+ /usr/include/gz/transport13/gz/transport/HandlerStorage.hh \
+ /usr/include/gz/transport13/gz/transport/TransportTypes.hh \
+ /usr/include/gz/transport13/gz/transport/Publisher.hh \
+ /usr/include/gz/msgs10/gz/msgs/discovery.pb.h \
+ /usr/include/gz/msgs10/gz/msgs/Export.hh \
+ /usr/include/gz/msgs10/gz/msgs/detail/Export.hh \
+ /usr/include/gz/msgs10/gz/msgs/details/discovery.pb.h \
+ /usr/include/google/protobuf/extension_set.h \
+ /usr/include/gz/msgs10/gz/msgs/header.pb.h \
+ /usr/include/gz/msgs10/gz/msgs/details/header.pb.h \
+ /usr/include/gz/msgs10/gz/msgs/time.pb.h \
+ /usr/include/gz/msgs10/gz/msgs/details/time.pb.h \
+ /usr/include/gz/transport13/gz/transport/RepHandler.hh \
+ /usr/include/gz/transport13/gz/transport/Uuid.hh \
+ /usr/include/uuid/uuid.h /usr/include/x86_64-linux-gnu/sys/time.h \
+ /usr/include/gz/transport13/gz/transport/ReqHandler.hh \
+ /usr/include/gz/transport13/gz/transport/SubscriptionHandler.hh \
+ /usr/include/gz/msgs10/gz/msgs/Factory.hh \
+ /usr/include/gz/msgs10/gz/msgs/config.hh \
+ /usr/include/gz/msgs10/gz/msgs/MessageFactory.hh \
+ /usr/include/gz/msgs10/gz/msgs/detail/dynamic_message_cast.hh \
+ /usr/include/gz/utils2/gz/utils/ImplPtr.hh \
+ /usr/include/gz/utils2/gz/utils/detail/DefaultOps.hh \
+ /usr/include/gz/utils2/gz/utils/SuppressWarning.hh \
+ /usr/include/gz/utils2/gz/utils/detail/SuppressWarning.hh \
+ /usr/include/gz/utils2/gz/utils/Export.hh \
+ /usr/include/gz/utils2/gz/utils/detail/Export.hh \
+ /usr/include/gz/utils2/gz/utils/detail/ImplPtr.hh \
+ /usr/include/gz/transport13/gz/transport/MessageInfo.hh \
+ /usr/include/gz/transport13/gz/transport/SubscribeOptions.hh \
+ /usr/include/gz/transport13/gz/transport/TopicStorage.hh \
+ /usr/include/gz/transport13/gz/transport/TopicStatistics.hh \
+ /usr/include/gz/msgs10/gz/msgs/statistic.pb.h \
+ /usr/include/gz/msgs10/gz/msgs/details/statistic.pb.h \
+ /usr/include/gz/transport13/gz/transport/TopicUtils.hh \
+ /usr/include/gz/transport13/gz/transport/detail/Node.hh \
+ /usr/include/gz/msgs10/gz/msgs/empty.pb.h \
+ /usr/include/gz/msgs10/gz/msgs/details/empty.pb.h \
+ /usr/include/gz/msgs10/gz/msgs/pointcloud_packed.pb.h \
+ /usr/include/gz/msgs10/gz/msgs/details/pointcloud_packed.pb.h

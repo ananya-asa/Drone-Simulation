@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/uav_planner.dir/src/lidar_bridge.cpp.o"
+  "CMakeFiles/uav_planner.dir/src/lidar_bridge.cpp.o.d"
   "CMakeFiles/uav_planner.dir/src/main.cpp.o"
   "CMakeFiles/uav_planner.dir/src/main.cpp.o.d"
   "CMakeFiles/uav_planner.dir/src/path_planner.cpp.o"

@@ -22,13 +22,13 @@ void TrajectoryFollower::start() {
         // Convert grid coordinates to world coordinates (NED frame)
         float north_m = path_grid_[i].x() * resolution_;
         float east_m = path_grid_[i].y() * resolution_;
-        float down_m = -2.5f; // Fixed altitude
+        float down_m = -2.5f; // Fixed altitude (up from ground)
 
-        std::cout << "Waypoint " << i+1 << "/" << path_grid_.size() 
+        std::cout << "\nWaypoint " << i+1 << "/" << path_grid_.size() 
                   << ": Grid(" << path_grid_[i].x() << "," << path_grid_[i].y() << "," << path_grid_[i].z() << ")"
                   << " -> NED(" << north_m << "," << east_m << "," << down_m << ")" << std::endl;
 
-        // Send setpoint
+        // Send setpoint to drone
         Offboard::PositionNedYaw setpoint{};
         setpoint.north_m = north_m;
         setpoint.east_m = east_m;
@@ -36,11 +36,15 @@ void TrajectoryFollower::start() {
         setpoint.yaw_deg = 0.0f;
         
         offboard_->set_position_ned(setpoint);
+        sleep_for(milliseconds(200)); // Give controller time to process
 
-        // Wait for drone to reach waypoint
+        // Wait for drone to reach waypoint with STRICTER criteria
         bool reached = false;
         int timeout_count = 0;
-        const int max_timeout = 50; // 5 seconds
+        const int max_timeout = 100; // 10 seconds (was 5 seconds)
+        const float distance_threshold = 0.15f; // Stricter threshold (was 0.3m)
+
+        std::cout << "  Waiting to reach waypoint..." << std::flush;
 
         while (!reached && timeout_count < max_timeout) {
             Telemetry::PositionNed current_pos = telemetry_->position_velocity_ned().position;
@@ -51,19 +55,26 @@ void TrajectoryFollower::start() {
                 std::pow(current_pos.down_m - down_m, 2)
             );
 
-            if (distance < 0.3) { // 30cm threshold
+            if (distance < distance_threshold) {
                 reached = true;
-                std::cout << "  -> Reached waypoint " << i+1 << std::endl;
+                std::cout << " ✓ Reached (distance: " << distance << "m)" << std::endl;
             }
 
             sleep_for(milliseconds(100));
             timeout_count++;
+            
+            if (timeout_count % 10 == 0) {
+                std::cout << "."; // Progress indicator
+            }
         }
 
         if (!reached) {
-            std::cout << "  -> Timeout at waypoint " << i+1 << ", moving to next" << std::endl;
+            std::cout << " ✗ TIMEOUT (moved on after " << timeout_count << " iterations)" << std::endl;
         }
+
+        // Hover briefly at this waypoint before moving to next
+        sleep_for(milliseconds(500));
     }
 
-    std::cout << "TrajectoryFollower: Path execution complete!" << std::endl;
+    std::cout << "\nTrajectoryFollower: Path execution complete!" << std::endl;
 }

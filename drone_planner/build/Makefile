@@ -129,6 +129,30 @@ uav_planner/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uav_planner.dir/build.make CMakeFiles/uav_planner.dir/build
 .PHONY : uav_planner/fast
 
+src/lidar_bridge.o: src/lidar_bridge.cpp.o
+.PHONY : src/lidar_bridge.o
+
+# target to build an object file
+src/lidar_bridge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/uav_planner.dir/build.make CMakeFiles/uav_planner.dir/src/lidar_bridge.cpp.o
+.PHONY : src/lidar_bridge.cpp.o
+
+src/lidar_bridge.i: src/lidar_bridge.cpp.i
+.PHONY : src/lidar_bridge.i
+
+# target to preprocess a source file
+src/lidar_bridge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/uav_planner.dir/build.make CMakeFiles/uav_planner.dir/src/lidar_bridge.cpp.i
+.PHONY : src/lidar_bridge.cpp.i
+
+src/lidar_bridge.s: src/lidar_bridge.cpp.s
+.PHONY : src/lidar_bridge.s
+
+# target to generate assembly for a file
+src/lidar_bridge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/uav_planner.dir/build.make CMakeFiles/uav_planner.dir/src/lidar_bridge.cpp.s
+.PHONY : src/lidar_bridge.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -234,6 +258,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... uav_planner"
+	@echo "... src/lidar_bridge.o"
+	@echo "... src/lidar_bridge.i"
+	@echo "... src/lidar_bridge.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

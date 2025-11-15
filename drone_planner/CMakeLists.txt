@@ -4,26 +4,25 @@ project(DronePlanner)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Explicitly add Eigen3 include directory
 include_directories(/usr/include/eigen3)
 include_directories(include)
 
-# Find packages
 find_package(Eigen3 REQUIRED)
 find_package(PCL 1.10 REQUIRED)
 find_package(MAVSDK REQUIRED)
+find_package(gz-transport13 REQUIRED)  # ADD THIS LINE
 
-# Build executable
 add_executable(uav_planner 
     src/main.cpp 
     src/path_planner.cpp 
     src/world_model.cpp 
     src/trajectory_follower.cpp
+      src/lidar_bridge.cpp 
 )
 
-# Link libraries
 target_link_libraries(uav_planner PRIVATE 
     Eigen3::Eigen
     ${PCL_LIBRARIES}
     MAVSDK::mavsdk
+    gz-transport13::gz-transport13  # ADD THIS LINE
 )
