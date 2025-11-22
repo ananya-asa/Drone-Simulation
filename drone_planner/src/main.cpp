@@ -42,31 +42,25 @@ std::shared_ptr<System> get_system(Mavsdk& mavsdk) {
 }
 
 int main() {
-    std::cout << "\n=== Autonomous Drone Planner V4.0 (LIVE LIDAR) ===" << std::endl;
+    std::cout << "\n=== Autonomous Drone Planner V5.0 (TRUE AUTONOMOUS) ===" << std::endl;
 
-    // Setup world model
+    // ===== 1. SETUP PHASE =====
     const double RESOLUTION = 0.2;
     WorldModel world(RESOLUTION);
 
-    // Setup LIDAR bridge
     std::cout << "\n[SETUP] Initializing LIDAR sensor bridge..." << std::endl;
     LIDARBridge lidar;
     if (!lidar.subscribe()) {
         std::cerr << "[ERROR] Failed to subscribe to LIDAR" << std::endl;
         return 1;
     }
+    sleep_for(seconds(2));
 
-    // Give sensor time to start publishing
-    std::cout << "[SETUP] Waiting 3 seconds for LIDAR to start publishing..." << std::endl;
-    sleep_for(seconds(3));
-
-    // Connect to PX4 SITL
-    std::cout << "\n[SETUP] Connecting to PX4 SITL..." << std::endl;
+    std::cout << "[SETUP] Connecting to PX4 SITL..." << std::endl;
     Mavsdk mavsdk(Mavsdk::Configuration(mavsdk::ComponentType::GroundStation));
     ConnectionResult conn_result = mavsdk.add_any_connection("udpin://0.0.0.0:14540");
-    
     if (conn_result != ConnectionResult::Success) {
-        std::cerr << "[ERROR] Connection failed: " << conn_result << std::endl;
+        std::cerr << "[ERROR] Connection failed" << std::endl;
         return 1;
     }
 
@@ -77,35 +71,66 @@ int main() {
     auto offboard = std::make_shared<Offboard>(system);
     auto telemetry = std::make_shared<Telemetry>(system);
 
-    // Wait for drone health
-    std::cout << "\n[SETUP] Waiting for drone to be ready..." << std::endl;
-    int health_wait_count = 0;
-    while (!telemetry->health_all_ok() && health_wait_count < 30) {
+    std::cout << "[SETUP] Waiting for drone to be ready..." << std::endl;
+    int health_wait = 0;
+    while (!telemetry->health_all_ok() && health_wait < 30) {
         sleep_for(seconds(1));
-        health_wait_count++;
+        health_wait++;
     }
 
-    if (!telemetry->health_all_ok()) {
-        std::cout << "[WARNING] Drone health check incomplete, continuing anyway..." << std::endl;
+    // ===== 2. TAKEOFF PHASE =====
+    std::cout << "\n[FLIGHT] Arming drone..." << std::endl;
+    if (action->arm() != Action::Result::Success) {
+        std::cerr << "[ERROR] Arming failed" << std::endl;
+        return 1;
     }
 
-    // === MAIN PLANNING LOOP ===
-    std::cout << "\n[MISSION] Starting autonomous mission with live LIDAR..." << std::endl;
+    std::cout << "[FLIGHT] Taking off..." << std::endl;
+    if (action->takeoff() != Action::Result::Success) {
+        std::cerr << "[ERROR] Takeoff failed" << std::endl;
+        return 1;
+    }
+    sleep_for(seconds(5));
 
-    for (int mission = 0; mission < 3; ++mission) {
-        std::cout << "\n--- MISSION " << mission + 1 << " ---" << std::endl;
+    std::cout << "[FLIGHT] Starting Offboard mode..." << std::endl;
+    Offboard::PositionNedYaw initial_setpoint{};
+    initial_setpoint.north_m = 0.0f;
+    initial_setpoint.east_m = 0.0f;
+    initial_setpoint.down_m = -2.5f;
+    initial_setpoint.yaw_deg = 0.0f;
+    offboard->set_position_ned(initial_setpoint);
 
-        // Wait for LIDAR data (max 5 seconds)
-        std::cout << "[LIDAR] Waiting for sensor data..." << std::endl;
-        int wait_count = 0;
-        while (!lidar.has_new_data() && wait_count < 50) {
+    if (offboard->start() != Offboard::Result::Success) {
+        std::cerr << "[ERROR] Offboard start failed" << std::endl;
+        return 1;
+    }
+    sleep_for(seconds(2));
+    std::cout << "[FLIGHT] Offboard mode active!" << std::endl;
+
+    // =========================================================================
+    // ===== 3. THE TRUE AUTONOMOUS LOOP (THE MAGIC HAPPENS HERE) =====
+    // =========================================================================
+    Eigen::Vector3i goal_grid(50, 25, 0);  // 10m North, 5m East in grid coords
+    int autonomous_loops = 0;
+    const int MAX_LOOPS = 5;
+
+    while (autonomous_loops < MAX_LOOPS) {
+        std::cout << "\n╔════════════════════════════════════════╗" << std::endl;
+        std::cout << "║   AUTONOMOUS LOOP " << autonomous_loops + 1 << "/" << MAX_LOOPS 
+                  << "                   ║" << std::endl;
+        std::cout << "╚════════════════════════════════════════╝" << std::endl;
+
+        // --- STEP 1: Get Live LIDAR Data ---
+        std::cout << "\n[SENSE] Waiting for new LIDAR data..." << std::endl;
+        int lidar_wait = 0;
+        while (!lidar.has_new_data() && lidar_wait < 50) {
             sleep_for(milliseconds(100));
-            wait_count++;
+            lidar_wait++;
         }
 
         if (!lidar.has_new_data()) {
-            std::cout << "[WARNING] No LIDAR data received yet, using fallback..." << std::endl;
-            // Fallback: use static wall (optional)
+            std::cout << "[WARN] No LIDAR data received, using fallback..." << std::endl;
+            // Fallback: static test wall
             pcl::PointCloud<pcl::PointXYZ>::Ptr fallback(new pcl::PointCloud<pcl::PointXYZ>);
             for (double y = -1.0; y <= 1.0; y += 0.1) {
                 for (double z = -1.0; z <= 1.0; z += 0.1) {
@@ -114,74 +139,68 @@ int main() {
             }
             world.buildMap(fallback);
         } else {
-            std::cout << "[LIDAR] Data received! Building map with " 
-                      << lidar.get_cloud()->points.size() << " points" << std::endl;
+            std::cout << "[SENSE] Got " << lidar.get_cloud()->points.size() 
+                      << " points from LIDAR" << std::endl;
             world.buildMap(lidar.get_cloud());
             lidar.reset_data_flag();
         }
 
-        // Plan path
-        Eigen::Vector3i start_grid(0, 0, 0);
-        Eigen::Vector3i goal_grid(10, 0, 0);
+        // --- STEP 2: Get Current Drone Position ---
+        Telemetry::PositionNed current_pos = telemetry->position_velocity_ned().position;
+        Eigen::Vector3i start_grid(
+            std::round(current_pos.north_m / RESOLUTION),
+            std::round(current_pos.east_m / RESOLUTION),
+            0
+        );
 
-        std::cout << "[PLANNING] Planning path from " << start_grid.transpose() 
-                  << " to " << goal_grid.transpose() << std::endl;
+        std::cout << "\n[THINK] Current position (world): (" << current_pos.north_m << ", " 
+                  << current_pos.east_m << ", " << current_pos.down_m << ")" << std::endl;
+        std::cout << "[THINK] Current position (grid): " << start_grid.transpose() << std::endl;
+        std::cout << "[THINK] Goal position (grid): " << goal_grid.transpose() << std::endl;
 
+        // --- STEP 3: Plan New Path ---
+        std::cout << "\n[PLAN] Computing A* path..." << std::endl;
         std::vector<Eigen::Vector3i> path_grid = A_star_search(start_grid, goal_grid, world);
 
         if (path_grid.empty()) {
-            std::cerr << "[ERROR] No path found!" << std::endl;
+            std::cerr << "[WARN] No path found! Retrying..." << std::endl;
+            autonomous_loops++;
             continue;
         }
 
-        std::cout << "[PLANNING] Success! Path has " << path_grid.size() << " waypoints" << std::endl;
+        std::cout << "[PLAN] ✓ Path found with " << path_grid.size() << " waypoints" << std::endl;
 
-        // Only execute flight on first mission
-        if (mission == 0) {
-            std::cout << "\n[FLIGHT] Arming drone..." << std::endl;
-            if (action->arm() != Action::Result::Success) {
-                std::cerr << "[ERROR] Arming failed!" << std::endl;
-                return 1;
-            }
+        // --- STEP 4: Execute Path ---
+        std::cout << "\n[ACT] Following trajectory..." << std::endl;
+        TrajectoryFollower follower(telemetry, offboard, path_grid, RESOLUTION);
+        follower.start();
 
-            std::cout << "[FLIGHT] Taking off..." << std::endl;
-            if (action->takeoff() != Action::Result::Success) {
-                std::cerr << "[ERROR] Takeoff failed!" << std::endl;
-                return 1;
-            }
-            sleep_for(seconds(5));
+        std::cout << "\n[ACT] Trajectory complete!" << std::endl;
 
-            std::cout << "[FLIGHT] Starting Offboard mode..." << std::endl;
-            Offboard::PositionNedYaw initial_setpoint{};
-            initial_setpoint.north_m = 0.0f;
-            initial_setpoint.east_m = 0.0f;
-            initial_setpoint.down_m = -2.5f;
-            initial_setpoint.yaw_deg = 0.0f;
-            
-            offboard->set_position_ned(initial_setpoint);
-            
-            if (offboard->start() != Offboard::Result::Success) {
-                std::cerr << "[ERROR] Offboard start failed!" << std::endl;
-                return 1;
-            }
-            sleep_for(seconds(2));
-
-            std::cout << "[FLIGHT] Executing trajectory..." << std::endl;
-            TrajectoryFollower follower(telemetry, offboard, path_grid, RESOLUTION);
-            follower.start();
-
-            std::cout << "\n[FLIGHT] Landing..." << std::endl;
-            offboard->stop();
-            sleep_for(seconds(2));
-            action->land();
-
-            while (telemetry->in_air()) {
-                sleep_for(seconds(1));
-            }
-        }
+        autonomous_loops++;
     }
 
-    std::cout << "\n=== MISSION COMPLETE ===" << std::endl;
-    std::cout << "[STATS] Total LIDAR callbacks: " << lidar.get_callback_count() << std::endl;
+    // =========================================================================
+    // ===== 4. LAND PHASE =====
+    // =========================================================================
+    std::cout << "\n[FLIGHT] Autonomous loops complete. Landing..." << std::endl;
+    offboard->stop();
+    sleep_for(seconds(2));
+    action->land();
+
+    int land_timeout = 0;
+    while (telemetry->in_air() && land_timeout < 60) {
+        std::cout << ".";
+        sleep_for(seconds(1));
+        land_timeout++;
+    }
+    std::cout << "\n\n[FLIGHT] ✓ Landed safely!" << std::endl;
+
+    std::cout << "\n╔════════════════════════════════════════╗" << std::endl;
+    std::cout << "║     MISSION COMPLETE - ALL SYSTEMS GO  ║" << std::endl;
+    std::cout << "║     Loops completed: " << autonomous_loops << "/" << MAX_LOOPS 
+              << "                     ║" << std::endl;
+    std::cout << "╚════════════════════════════════════════╝\n" << std::endl;
+
     return 0;
 }

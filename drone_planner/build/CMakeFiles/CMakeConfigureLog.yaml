@@ -4336,3 +4336,407 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:567 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-GVh905"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-GVh905"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-GVh905'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ecda1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ecda1.dir/build.make CMakeFiles/cmTC_ecda1.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-GVh905'
+        Building C object CMakeFiles/cmTC_ecda1.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_ecda1.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-GVh905/test_mpi.c
+        Linking C executable cmTC_ecda1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ecda1.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_ecda1.dir/test_mpi.c.o -o cmTC_ecda1  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-GVh905'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:567 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-LpPcyG"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-LpPcyG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-LpPcyG'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cadcc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cadcc.dir/build.make CMakeFiles/cmTC_cadcc.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-LpPcyG'
+        Building C object CMakeFiles/cmTC_cadcc.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_cadcc.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-LpPcyG/test_mpi.c
+        Linking C executable cmTC_cadcc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cadcc.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_cadcc.dir/test_mpi.c.o -o cmTC_cadcc  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-LpPcyG'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:570 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-f8lc2G"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-f8lc2G"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-f8lc2G'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_15226/fast
+        gmake: Warning: File 'Makefile' has modification time 0.14 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_15226.dir/build.make CMakeFiles/cmTC_15226.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-f8lc2G'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_15226.dir/flags.make' has modification time 0.11 s in the future
+        Building C object CMakeFiles/cmTC_15226.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_15226.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-f8lc2G/test_mpi.c
+        Linking C executable cmTC_15226
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15226.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_15226.dir/test_mpi.c.o -o cmTC_15226  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-f8lc2G'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:567 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ucw7uN"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ucw7uN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ucw7uN'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0a328/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0a328.dir/build.make CMakeFiles/cmTC_0a328.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ucw7uN'
+        Building C object CMakeFiles/cmTC_0a328.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_0a328.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ucw7uN/test_mpi.c
+        Linking C executable cmTC_0a328
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a328.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_0a328.dir/test_mpi.c.o -o cmTC_0a328  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ucw7uN'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:567 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-8FjR1K"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-8FjR1K"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-8FjR1K'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f224b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f224b.dir/build.make CMakeFiles/cmTC_f224b.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-8FjR1K'
+        Building C object CMakeFiles/cmTC_f224b.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_f224b.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-8FjR1K/test_mpi.c
+        Linking C executable cmTC_f224b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f224b.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_f224b.dir/test_mpi.c.o -o cmTC_f224b  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-8FjR1K'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:567 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-IGvUKV"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-IGvUKV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-IGvUKV'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_21f66/fast
+        gmake: Warning: File 'Makefile' has modification time 0.36 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_21f66.dir/build.make CMakeFiles/cmTC_21f66.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-IGvUKV'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_21f66.dir/flags.make' has modification time 0.31 s in the future
+        Building C object CMakeFiles/cmTC_21f66.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_21f66.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-IGvUKV/test_mpi.c
+        Linking C executable cmTC_21f66
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21f66.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_21f66.dir/test_mpi.c.o -o cmTC_21f66  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-IGvUKV'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:567 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-xdQRMZ"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-xdQRMZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-xdQRMZ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_51729/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_51729.dir/build.make CMakeFiles/cmTC_51729.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-xdQRMZ'
+        Building C object CMakeFiles/cmTC_51729.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_51729.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-xdQRMZ/test_mpi.c
+        Linking C executable cmTC_51729
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51729.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_51729.dir/test_mpi.c.o -o cmTC_51729  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-xdQRMZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:570 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-KHQf8t"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-KHQf8t"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-KHQf8t'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a6121/fast
+        gmake: Warning: File 'Makefile' has modification time 0.3 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a6121.dir/build.make CMakeFiles/cmTC_a6121.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-KHQf8t'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_a6121.dir/flags.make' has modification time 0.26 s in the future
+        Building C object CMakeFiles/cmTC_a6121.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_a6121.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-KHQf8t/test_mpi.c
+        Linking C executable cmTC_a6121
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6121.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_a6121.dir/test_mpi.c.o -o cmTC_a6121  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-KHQf8t'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:567 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-MINc8M"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-MINc8M"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-MINc8M'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c42fd/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c42fd.dir/build.make CMakeFiles/cmTC_c42fd.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-MINc8M'
+        Building C object CMakeFiles/cmTC_c42fd.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_c42fd.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-MINc8M/test_mpi.c
+        Linking C executable cmTC_c42fd
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c42fd.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_c42fd.dir/test_mpi.c.o -o cmTC_c42fd  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-MINc8M'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake-3.28/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/VTK-vtk-module-find-packages.cmake:397 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/vtk-config.cmake:150 (include)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:275 (find_package)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:324 (find_VTK)"
+      - "/usr/lib/x86_64-linux-gnu/cmake/pcl/PCLConfig.cmake:567 (find_external_library)"
+      - "CMakeLists.txt:11 (find_package)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ZVqSjI"
+      binary: "/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ZVqSjI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1/patches/99;/usr/lib/x86_64-linux-gnu/cmake/vtk-9.1;/usr/lib/x86_64-linux-gnu/cmake/pcl/Modules"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ZVqSjI'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_54a95/fast
+        gmake: Warning: File 'Makefile' has modification time 0.64 s in the future
+        /usr/bin/gmake  -f CMakeFiles/cmTC_54a95.dir/build.make CMakeFiles/cmTC_54a95.dir/build
+        gmake[1]: Entering directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ZVqSjI'
+        gmake[1]: Warning: File 'CMakeFiles/cmTC_54a95.dir/flags.make' has modification time 0.61 s in the future
+        Building C object CMakeFiles/cmTC_54a95.dir/test_mpi.c.o
+        /usr/bin/cc  -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi  -o CMakeFiles/cmTC_54a95.dir/test_mpi.c.o -c /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ZVqSjI/test_mpi.c
+        Linking C executable cmTC_54a95
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54a95.dir/link.txt --verbose=1
+        /usr/bin/cc -L/usr/lib/x86_64-linux-gnu/openmpi/lib CMakeFiles/cmTC_54a95.dir/test_mpi.c.o -o cmTC_54a95  /usr/lib/x86_64-linux-gnu/libmpi.so 
+        gmake[1]: warning:  Clock skew detected.  Your build may be incomplete.
+        gmake[1]: Leaving directory '/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build/CMakeFiles/CMakeScratch/TryCompile-ZVqSjI'
+        gmake: warning:  Clock skew detected.  Your build may be incomplete.
+        
+      exitCode: 0
+...
