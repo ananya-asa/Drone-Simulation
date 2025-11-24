@@ -1212,6 +1212,15 @@ pkgcfg_lib_ZeroMQ_zmq:FILEPATH=/usr/lib/x86_64-linux-gnu/libzmq.so
 //The directory containing a CMake configuration file for tiff.
 tiff_DIR:PATH=tiff_DIR-NOTFOUND
 
+//Value Computed by CMake
+uav_planner_BINARY_DIR:STATIC=/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build
+
+//Value Computed by CMake
+uav_planner_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+uav_planner_SOURCE_DIR:STATIC=/mnt/c/Users/anany/OneDrive/Drone/drone_planner
+
 //utf8cpp include directory
 utf8cpp_INCLUDE_DIR:PATH=/usr/include/utf8cpp
 

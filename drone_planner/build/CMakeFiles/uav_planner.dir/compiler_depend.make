@@ -898,8 +898,13 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /mnt/c/Users/anany/OneDrive/Drone/drone_planner/include/trajectory_follower.h \
   /mnt/c/Users/anany/OneDrive/Drone/drone_planner/include/world_model.h \
   /usr/include/alloca.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/asm-generic/sockios.h \
   /usr/include/assert.h \
   /usr/include/boost/config.hpp \
   /usr/include/boost/config/compiler/gcc.hpp \
@@ -1215,6 +1220,7 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/c++/13/bits/char_traits.h \
   /usr/include/c++/13/bits/charconv.h \
   /usr/include/c++/13/bits/chrono.h \
+  /usr/include/c++/13/bits/codecvt.h \
   /usr/include/c++/13/bits/concept_check.h \
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
@@ -1235,8 +1241,11 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
+  /usr/include/c++/13/bits/locale_conv.h \
   /usr/include/c++/13/bits/locale_facets.h \
   /usr/include/c++/13/bits/locale_facets.tcc \
+  /usr/include/c++/13/bits/locale_facets_nonio.h \
+  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
   /usr/include/c++/13/bits/localefwd.h \
   /usr/include/c++/13/bits/memory_resource.h \
   /usr/include/c++/13/bits/memoryfwd.h \
@@ -1250,6 +1259,7 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/c++/13/bits/postypes.h \
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
+  /usr/include/c++/13/bits/quoted_string.h \
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
@@ -1310,6 +1320,7 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/c++/13/compare \
   /usr/include/c++/13/complex \
   /usr/include/c++/13/condition_variable \
+  /usr/include/c++/13/cstdarg \
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
@@ -1332,12 +1343,14 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/c++/13/functional \
   /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
+  /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
+  /usr/include/c++/13/locale \
   /usr/include/c++/13/map \
   /usr/include/c++/13/math.h \
   /usr/include/c++/13/memory \
@@ -1572,6 +1585,7 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/google/protobuf/any.h \
+  /usr/include/google/protobuf/any.pb.h \
   /usr/include/google/protobuf/arena.h \
   /usr/include/google/protobuf/arena_impl.h \
   /usr/include/google/protobuf/arenastring.h \
@@ -1591,6 +1605,11 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/google/protobuf/io/zero_copy_stream.h \
   /usr/include/google/protobuf/io/zero_copy_stream_impl_lite.h \
   /usr/include/google/protobuf/map.h \
+  /usr/include/google/protobuf/map_entry.h \
+  /usr/include/google/protobuf/map_entry_lite.h \
+  /usr/include/google/protobuf/map_field.h \
+  /usr/include/google/protobuf/map_field_inl.h \
+  /usr/include/google/protobuf/map_field_lite.h \
   /usr/include/google/protobuf/map_type_handler.h \
   /usr/include/google/protobuf/message.h \
   /usr/include/google/protobuf/message_lite.h \
@@ -1599,6 +1618,7 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/google/protobuf/port.h \
   /usr/include/google/protobuf/port_def.inc \
   /usr/include/google/protobuf/port_undef.inc \
+  /usr/include/google/protobuf/reflection_ops.h \
   /usr/include/google/protobuf/repeated_field.h \
   /usr/include/google/protobuf/repeated_ptr_field.h \
   /usr/include/google/protobuf/stubs/callback.h \
@@ -1617,28 +1637,489 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/google/protobuf/stubs/strutil.h \
   /usr/include/google/protobuf/unknown_field_set.h \
   /usr/include/google/protobuf/wire_format_lite.h \
+  /usr/include/gz/math7/gz/math/Angle.hh \
+  /usr/include/gz/math7/gz/math/AxisAlignedBox.hh \
+  /usr/include/gz/math7/gz/math/Color.hh \
+  /usr/include/gz/math7/gz/math/Export.hh \
+  /usr/include/gz/math7/gz/math/Helpers.hh \
+  /usr/include/gz/math7/gz/math/Inertial.hh \
+  /usr/include/gz/math7/gz/math/Line2.hh \
+  /usr/include/gz/math7/gz/math/Line3.hh \
+  /usr/include/gz/math7/gz/math/MassMatrix3.hh \
+  /usr/include/gz/math7/gz/math/Material.hh \
+  /usr/include/gz/math7/gz/math/MaterialType.hh \
+  /usr/include/gz/math7/gz/math/Matrix3.hh \
+  /usr/include/gz/math7/gz/math/Matrix6.hh \
+  /usr/include/gz/math7/gz/math/Plane.hh \
+  /usr/include/gz/math7/gz/math/Pose3.hh \
+  /usr/include/gz/math7/gz/math/Quaternion.hh \
+  /usr/include/gz/math7/gz/math/SemanticVersion.hh \
+  /usr/include/gz/math7/gz/math/SphericalCoordinates.hh \
+  /usr/include/gz/math7/gz/math/Vector2.hh \
+  /usr/include/gz/math7/gz/math/Vector3.hh \
+  /usr/include/gz/math7/gz/math/config.hh \
+  /usr/include/gz/math7/gz/math/detail/Export.hh \
+  /usr/include/gz/msgs10/gz/msgs.hh \
   /usr/include/gz/msgs10/gz/msgs/Export.hh \
   /usr/include/gz/msgs10/gz/msgs/Factory.hh \
+  /usr/include/gz/msgs10/gz/msgs/InstallationDirectories.hh \
   /usr/include/gz/msgs10/gz/msgs/MessageFactory.hh \
+  /usr/include/gz/msgs10/gz/msgs/MessageTypes.hh \
+  /usr/include/gz/msgs10/gz/msgs/PointCloudPackedUtils.hh \
+  /usr/include/gz/msgs10/gz/msgs/Utility.hh \
+  /usr/include/gz/msgs10/gz/msgs/actor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/actuators.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/air_pressure_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/air_speed.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/air_speed_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/altimeter.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/altimeter_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/annotated_axis_aligned_2d_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/annotated_axis_aligned_2d_box_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/annotated_oriented_3d_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/annotated_oriented_3d_box_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/any.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/atmosphere.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/axis.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/axis_aligned_2d_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/axis_aligned_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/battery.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/battery_state.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/boolean.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/boxgeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/bytes.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/camera_cmd.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/camera_info.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/camera_lens.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/camerasensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/cameratrack.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/capsulegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/cessna.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/clock.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/cmd_vel2d.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/collision.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/color.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/conegeom.pb.h \
   /usr/include/gz/msgs10/gz/msgs/config.hh \
+  /usr/include/gz/msgs10/gz/msgs/contact.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/contacts.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/contactsensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/convert/AxisAlignedBox.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/Color.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/DiscoveryType.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/FuelMetadata.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/GeometryType.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/Inertial.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/JointType.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/PixelFormatType.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/Plane.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/Pose.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/Quaternion.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/ShaderType.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/SphericalCoordinates.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/StdTypes.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/Vector2.hh \
+  /usr/include/gz/msgs10/gz/msgs/convert/Vector3.hh \
+  /usr/include/gz/msgs10/gz/msgs/cylindergeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/data_load_options.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/dataframe.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/density.pb.h \
   /usr/include/gz/msgs10/gz/msgs/detail/Export.hh \
+  /usr/include/gz/msgs10/gz/msgs/detail/PointCloudPackedUtils.hh \
   /usr/include/gz/msgs10/gz/msgs/detail/dynamic_message_cast.hh \
+  /usr/include/gz/msgs10/gz/msgs/details/actor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/actuators.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/air_pressure_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/air_speed.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/air_speed_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/altimeter.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/altimeter_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/annotated_axis_aligned_2d_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/annotated_axis_aligned_2d_box_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/annotated_oriented_3d_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/annotated_oriented_3d_box_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/any.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/atmosphere.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/axis.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/axis_aligned_2d_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/axis_aligned_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/battery.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/battery_state.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/boolean.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/boxgeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/bytes.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/camera_cmd.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/camera_info.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/camera_lens.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/camerasensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/cameratrack.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/capsulegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/cessna.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/clock.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/cmd_vel2d.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/collision.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/color.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/conegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/contact.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/contacts.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/contactsensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/cylindergeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/data_load_options.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/dataframe.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/density.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/diagnostics.pb.h \
   /usr/include/gz/msgs10/gz/msgs/details/discovery.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/distortion.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/double.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/double_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/duration.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/dvl_beam_state.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/dvl_kinematic_estimate.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/dvl_range_estimate.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/dvl_tracking_target.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/dvl_velocity_tracking.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/ellipsoidgeom.pb.h \
   /usr/include/gz/msgs10/gz/msgs/details/empty.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/entity.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/entity_factory.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/entity_factory_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/entity_plugin_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/entity_wrench.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/entity_wrench_map.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/float.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/float_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/fluid.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/fluid_pressure.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/fog.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/friction.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/fuel_metadata.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/geometry.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/gps.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/gps_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/gui.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/gui_camera.pb.h \
   /usr/include/gz/msgs10/gz/msgs/details/header.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/heightmapgeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/hydra.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/image.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/imagegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/imu.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/imu_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/inertial.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/int32.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/int32_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/int64.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/int64_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/joint.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/joint_animation.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/joint_cmd.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/joint_trajectory.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/joint_trajectory_point.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/joint_wrench.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/joy.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/joystick.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/laserscan.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/lens.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/lidar_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/light.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/link.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/link_data.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/log_control.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/log_playback_control.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/log_playback_stats.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/log_status.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/logical_camera_image.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/logical_camera_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/magnetometer.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/magnetometer_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/marker.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/marker_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/material.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/material_color.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/meshgeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/model.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/model_configuration.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/model_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/navsat.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/navsat_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/occupancy_grid.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/odometry.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/odometry_with_covariance.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/oriented_3d_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/packet.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/param.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/param_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/parameter.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/parameter_declaration.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/parameter_declarations.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/parameter_error.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/parameter_name.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/parameter_value.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/particle_emitter.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/particle_emitter_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/performance_sensor_metrics.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/physics.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/pid.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/planegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/plugin.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/plugin_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/pointcloud.pb.h \
   /usr/include/gz/msgs10/gz/msgs/details/pointcloud_packed.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/polylinegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/pose.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/pose_animation.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/pose_trajectory.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/pose_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/pose_with_covariance.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/projector.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/propagation_grid.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/propagation_particle.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/publish.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/publishers.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/quaternion.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/raysensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/request.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/response.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/rest_login.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/rest_logout.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/rest_post.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/rest_response.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/road.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/scene.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/sdf_generator_config.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/selection.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/sensor_noise.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/sensor_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/serialized.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/serialized_map.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/server_control.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/shadows.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/sim_event.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/sky.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/sonar.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/spheregeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/spherical_coordinates.pb.h \
   /usr/include/gz/msgs10/gz/msgs/details/statistic.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/stringmsg.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/stringmsg_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/subscribe.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/surface.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/tactile.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/test.pb.h \
   /usr/include/gz/msgs10/gz/msgs/details/time.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/topic_info.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/track_visual.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/twist.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/twist_with_covariance.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/uint32.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/uint32_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/uint64.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/uint64_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/undo_redo.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/user_cmd.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/user_cmd_stats.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/vector2d.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/vector3d.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/version.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/version_range.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/versioned_name.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/video_record.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/visual.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/visual_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/web_request.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/wheel_slip_parameters_cmd.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/wind.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/wireless_node.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/wireless_nodes.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/world_control.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/world_control_state.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/world_modify.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/world_reset.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/world_stats.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/details/wrench.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/diagnostics.pb.h \
   /usr/include/gz/msgs10/gz/msgs/discovery.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/distortion.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/double.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/double_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/duration.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/dvl_beam_state.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/dvl_kinematic_estimate.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/dvl_range_estimate.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/dvl_tracking_target.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/dvl_velocity_tracking.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/ellipsoidgeom.pb.h \
   /usr/include/gz/msgs10/gz/msgs/empty.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/entity.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/entity_factory.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/entity_factory_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/entity_plugin_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/entity_wrench.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/entity_wrench_map.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/float.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/float_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/fluid.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/fluid_pressure.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/fog.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/friction.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/fuel_metadata.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/geometry.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/gps.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/gps_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/gui.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/gui_camera.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/gz.hh \
   /usr/include/gz/msgs10/gz/msgs/header.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/heightmapgeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/hydra.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/image.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/imagegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/imu.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/imu_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/inertial.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/int32.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/int32_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/int64.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/int64_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/joint.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/joint_animation.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/joint_cmd.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/joint_trajectory.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/joint_trajectory_point.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/joint_wrench.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/joy.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/joystick.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/laserscan.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/lens.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/lidar_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/light.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/link.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/link_data.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/log_control.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/log_playback_control.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/log_playback_stats.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/log_status.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/logical_camera_image.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/logical_camera_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/magnetometer.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/magnetometer_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/marker.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/marker_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/material.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/material_color.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/meshgeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/model.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/model_configuration.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/model_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/navsat.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/navsat_sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/occupancy_grid.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/odometry.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/odometry_with_covariance.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/oriented_3d_box.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/packet.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/param.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/param_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/parameter.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/parameter_declaration.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/parameter_declarations.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/parameter_error.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/parameter_name.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/parameter_value.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/particle_emitter.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/particle_emitter_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/performance_sensor_metrics.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/physics.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/pid.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/planegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/plugin.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/plugin_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/pointcloud.pb.h \
   /usr/include/gz/msgs10/gz/msgs/pointcloud_packed.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/polylinegeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/pose.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/pose_animation.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/pose_trajectory.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/pose_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/pose_with_covariance.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/projector.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/propagation_grid.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/propagation_particle.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/publish.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/publishers.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/quaternion.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/raysensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/request.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/response.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/rest_login.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/rest_logout.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/rest_post.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/rest_response.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/road.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/scene.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/sdf_generator_config.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/selection.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/sensor.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/sensor_noise.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/sensor_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/serialized.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/serialized_map.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/server_control.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/shadows.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/sim_event.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/sky.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/sonar.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/spheregeom.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/spherical_coordinates.pb.h \
   /usr/include/gz/msgs10/gz/msgs/statistic.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/stringmsg.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/stringmsg_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/subscribe.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/surface.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/tactile.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/test.pb.h \
   /usr/include/gz/msgs10/gz/msgs/time.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/topic_info.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/track_visual.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/twist.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/twist_with_covariance.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/uint32.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/uint32_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/uint64.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/uint64_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/undo_redo.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/user_cmd.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/user_cmd_stats.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/vector2d.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/vector3d.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/version.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/version_range.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/versioned_name.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/video_record.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/visual.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/visual_v.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/web_request.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/wheel_slip_parameters_cmd.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/wind.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/wireless_node.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/wireless_nodes.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/world_control.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/world_control_state.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/world_modify.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/world_reset.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/world_stats.pb.h \
+  /usr/include/gz/msgs10/gz/msgs/wrench.pb.h \
+  /usr/include/gz/transport13/gz/transport.hh \
   /usr/include/gz/transport13/gz/transport/AdvertiseOptions.hh \
+  /usr/include/gz/transport13/gz/transport/CIface.h \
+  /usr/include/gz/transport13/gz/transport/Clock.hh \
+  /usr/include/gz/transport13/gz/transport/Discovery.hh \
   /usr/include/gz/transport13/gz/transport/Export.hh \
   /usr/include/gz/transport13/gz/transport/HandlerStorage.hh \
+  /usr/include/gz/transport13/gz/transport/Helpers.hh \
   /usr/include/gz/transport13/gz/transport/MessageInfo.hh \
+  /usr/include/gz/transport13/gz/transport/NetUtils.hh \
   /usr/include/gz/transport13/gz/transport/Node.hh \
   /usr/include/gz/transport13/gz/transport/NodeOptions.hh \
   /usr/include/gz/transport13/gz/transport/NodeShared.hh \
@@ -1662,10 +2143,13 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/gz/utils2/gz/utils/detail/Export.hh \
   /usr/include/gz/utils2/gz/utils/detail/ImplPtr.hh \
   /usr/include/gz/utils2/gz/utils/detail/SuppressWarning.hh \
+  /usr/include/libintl.h \
   /usr/include/limits.h \
   /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/mavsdk/autopilot.h \
@@ -1920,6 +2404,8 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/mavsdk/server_component.h \
   /usr/include/mavsdk/system.h \
   /usr/include/mavsdk/vehicle.h \
+  /usr/include/netdb.h \
+  /usr/include/netinet/in.h \
   /usr/include/pcl-1.14/pcl/PCLHeader.h \
   /usr/include/pcl-1.14/pcl/PCLPointField.h \
   /usr/include/pcl-1.14/pcl/console/print.h \
@@ -1944,7 +2430,9 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/pcl-1.14/pcl/type_traits.h \
   /usr/include/pcl-1.14/pcl/types.h \
   /usr/include/pthread.h \
+  /usr/include/rpc/netdb.h \
   /usr/include/sched.h \
+  /usr/include/signal.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/stdio.h \
@@ -1952,11 +2440,17 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/time.h \
+  /usr/include/tinyxml2.h \
   /usr/include/unistd.h \
   /usr/include/uuid/uuid.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -1972,6 +2466,7 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -1982,6 +2477,7 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/netdb.h \
   /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -1991,6 +2487,22 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+  /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+  /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+  /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
+  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -2011,17 +2523,26 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
@@ -2048,14 +2569,20 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: /mnt/c/Users/anany/OneDrive/Drone/dro
   /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+  /usr/include/zmq.h \
+  /usr/include/zmq.hpp \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h \
@@ -4156,15 +4683,53 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:
 
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
+
+/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+
+/usr/include/x86_64-linux-gnu/bits/netdb.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
+/usr/include/signal.h:
+
+/usr/include/rpc/netdb.h:
+
 /usr/include/pcl-1.14/pcl/octree/octree_pointcloud.h:
 
 /usr/include/pcl-1.14/pcl/octree/octree_nodes.h:
 
-/usr/include/pcl-1.14/pcl/octree/octree_iterator.h:
-
 /usr/include/pcl-1.14/pcl/octree/octree_base.h:
 
-/usr/include/mavsdk/vehicle.h:
+/usr/include/netinet/in.h:
+
+/usr/include/netdb.h:
 
 /usr/include/mavsdk/system.h:
 
@@ -4172,17 +4737,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/mavsdk/plugins/action/action.h:
 
-/usr/include/mavsdk/plugin_base.h:
-
 /usr/include/mavsdk/mavsdk.h:
-
-/usr/include/mavsdk/mavlink_include.h:
 
 /usr/include/mavsdk/mavlink/minimal/minimal.h:
 
 /usr/include/mavsdk/mavlink/minimal/mavlink_msg_protocol_version.h:
-
-/usr/include/mavsdk/mavlink/mavlink_types.h:
 
 /usr/include/mavsdk/mavlink/mavlink_sha256.h:
 
@@ -4206,15 +4765,9 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_trajectory_representation_waypoints.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_trajectory_representation_bezier.h:
-
 /usr/include/mavsdk/mavlink/common/mavlink_msg_timesync.h:
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_time_estimate_to_target.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_terrain_report.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_terrain_data.h:
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_terrain_check.h:
 
@@ -4236,9 +4789,621 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_set_attitude_target.h:
 
-/usr/include/eigen3/Eigen/src/Core/Random.h:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_serial_control.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_pressure3.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_safety_allowed_area.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_response_event_error.h:
+
+/usr/include/pcl-1.14/pcl/octree/octree_search.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_request_event.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_request_data_stream.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_rc_channels_scaled.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_rc_channels_raw.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_raw_rpm.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_raw_pressure.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_raw_imu.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_radio_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_power_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_play_tune_v2.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_ping.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_param_request_read.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_param_request_list.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_value.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_orbit_execution_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_optical_flow_rad.h:
+
+/usr/include/pcl-1.14/pcl/octree/octree_key.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_optical_flow.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_message_pack.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_location.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_arm_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_onboard_computer_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_nav_controller_output.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_set_current.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_request_list.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_request.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_item_reached.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_item_int.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_count.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_ack.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_manual_setpoint.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_logging_data.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_logging_ack.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_log_request_list.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_log_erase.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_log_entry.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_log_data.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_landing_target.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_setup_signing.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_current.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_illuminator_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_hygrometer_sensor.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_home_position.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_state_quaternion.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_rc_inputs_raw.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_optical_flow.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_gps.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_imu.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_highres_imu.h:
+
+/usr/include/mavsdk/server_component.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_high_latency2.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_rtk.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_raw_int.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_input.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_global_origin.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps2_rtk.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_operator_id.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps2_raw.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_set_pitchyaw.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_set_attitude.h:
+
+/usr/include/pcl-1.14/pcl/octree/octree_container.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_device_information.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_device_attitude_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_follow_target.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_file_transfer_protocol.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_fence_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_event.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_encapsulated_data.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_efi_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_distance_sensor.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_debug_vect.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_debug_float_array.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_current_event_sequence.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_component_metadata.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_component_information.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_command_long.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_uavcan_node_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_clear_all.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_command_int.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_command_ack.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_change_operator_control.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_cellular_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_cellular_config.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_canfd_frame.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_can_filter_modify.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_trigger.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_tracking_image_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_settings.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_information.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_image_captured.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_capture_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_battery_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_battery_info.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_message_interval.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_autopilot_version.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_autopilot_state_for_gimbal_device.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_auth_key.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_link_node_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_attitude_target.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_actuator_output_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_command_cancel.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_actuator_control_target.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink.h:
+
+/usr/include/mavsdk/handle.h:
+
+/usr/include/mavsdk/deprecated.h:
+
+/usr/include/mavsdk/component_type.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/gz/transport13/gz/transport/Clock.hh:
+
+/usr/include/gz/transport13/gz/transport/CIface.h:
+
+/usr/include/gz/msgs10/gz/msgs/wrench.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/world_control_state.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_obstacle_distance.h:
+
+/usr/include/gz/msgs10/gz/msgs/wireless_node.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/wind.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/web_request.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/visual.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/video_record.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/version_range.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/version.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/user_cmd_stats.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_system_update.h:
+
+/usr/include/gz/msgs10/gz/msgs/undo_redo.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/track_visual.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/test.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/tactile.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/stringmsg_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/stringmsg.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_terrain_data.h:
+
+/usr/include/gz/msgs10/gz/msgs/spherical_coordinates.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/sky.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/sim_event.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/shadows.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/sensor_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/sensor_noise.pb.h:
+
+/usr/include/mavsdk/connection_result.h:
+
+/usr/include/gz/msgs10/gz/msgs/sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/selection.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/scene.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/road.pb.h:
+
+/usr/include/pcl-1.14/pcl/octree/octree_iterator.h:
+
+/usr/include/gz/msgs10/gz/msgs/rest_post.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/rest_login.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/request.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/raysensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/quaternion.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/publishers.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/publish.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/propagation_particle.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/projector.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/pose_animation.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/pose.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/polylinegeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/plugin_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/plugin.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/planegeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/performance_sensor_metrics.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/particle_emitter_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/parameter_name.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/parameter_declarations.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/parameter_declaration.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/parameter.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/param_v.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_trajectory_representation_bezier.h:
+
+/usr/include/gz/msgs10/gz/msgs/param.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/packet.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_button_change.h:
+
+/usr/include/gz/msgs10/gz/msgs/oriented_3d_box.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/odometry_with_covariance.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/odometry.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/navsat.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/model.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/material_color.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/material.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/marker.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/magnetometer_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/magnetometer.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/logical_camera_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/logical_camera_image.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/log_status.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_isbd_link_status.h:
+
+/usr/include/gz/msgs10/gz/msgs/log_control.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/link_data.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/link.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/lidar_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/laserscan.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/joystick.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_rtcm_data.h:
+
+/usr/include/gz/msgs10/gz/msgs/joint_wrench.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/joint_trajectory.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/joint_cmd.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/joint_animation.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/int64_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/int64.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/int32.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/imu_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/imu.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/imagegeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/image.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/hydra.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/gps_sensor.pb.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_data_transmission_handshake.h:
+
+/usr/include/gz/msgs10/gz/msgs/friction.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/fluid_pressure.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/fluid.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_controls.h:
+
+/usr/include/gz/msgs10/gz/msgs/navsat_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/entity_wrench_map.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/entity_plugin_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/entity_factory.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/entity.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/ellipsoidgeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/dvl_velocity_tracking.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/dvl_tracking_target.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/dvl_range_estimate.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/dvl_kinematic_estimate.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/duration.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/double.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/distortion.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/world_stats.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/world_modify.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/wireless_nodes.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/wireless_node.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/web_request.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/visual_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/log_playback_stats.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/video_record.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/version_range.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/version.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/vector3d.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/vector2d.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/user_cmd.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/uint64.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/twist_with_covariance.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/twist.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_authentication.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/track_visual.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/test.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/tactile.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/surface.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/stringmsg.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/spheregeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/gui.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/sky.pb.h:
+
+/usr/include/mavsdk/plugin_base.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/serialized.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/sensor_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/response.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/sdf_generator_config.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/scene.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/rest_post.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/rest_logout.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/rest_login.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/response.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/publish.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/propagation_particle.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/propagation_grid.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/float_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/projector.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/uint32.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/pose_with_covariance.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/pose_trajectory.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/wheel_slip_parameters_cmd.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/pose_animation.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/selection.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/pose.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/pointcloud.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/plugin_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/planegeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/pid.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/performance_sensor_metrics.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/particle_emitter_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/particle_emitter.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/parameter_value.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/parameter_error.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/parameter_declarations.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/parameter_declaration.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/parameter.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_flight_information.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/param_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/oriented_3d_box.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/serialized.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/odometry_with_covariance.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/navsat_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/meshgeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/material_color.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/magnetometer_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/logical_camera_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/log_playback_stats.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_component_information_basic.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/log_control.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/light.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/versioned_name.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/convert/PixelFormatType.hh:
+
+/usr/include/gz/msgs10/gz/msgs/details/camerasensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/entity_plugin_v.pb.h:
 
 /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_param_set.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_fuel_status.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_att_pos_mocap.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/duration.pb.h:
 
 /usr/include/eigen3/Eigen/src/Core/NumTraits.h:
 
@@ -4248,13 +5413,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_global_origin.h:
-
 /usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_debug_float_array.h:
-
 /usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:
+
+/usr/include/gz/msgs10/gz/msgs/uint32_v.pb.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp:
 
@@ -4265,8 +5428,6 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 /mnt/c/Users/anany/OneDrive/Drone/drone_planner/src/main.cpp:
 
 /usr/include/eigen3/Eigen/src/Core/CoreIterators.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps2_rtk.h:
 
 /usr/include/eigen3/Eigen/src/Core/Assign.h:
 
@@ -4280,17 +5441,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/SVD:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_logging_data.h:
-
 /usr/include/eigen3/Eigen/QR:
 
 /usr/include/eigen3/Eigen/Core:
+
+/usr/include/gz/msgs10/gz/msgs/sdf_generator_config.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/rest_response.pb.h:
 
 /usr/include/c++/13/bits/functexcept.h:
 
 /usr/include/c++/13/version:
 
-/usr/include/boost/preprocessor/logical/compl.hpp:
+/usr/include/gz/msgs10/gz/msgs/details/user_cmd_stats.pb.h:
 
 /usr/include/eigen3/Eigen/src/Core/util/Macros.h:
 
@@ -4298,9 +5461,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/typeinfo:
 
+/usr/include/gz/math7/gz/math/MassMatrix3.hh:
+
 /usr/include/c++/13/type_traits:
 
 /usr/include/features-time64.h:
+
+/usr/include/gz/msgs10/gz/msgs/pose_trajectory.pb.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
@@ -4318,6 +5485,10 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_position_target_local_ned.h:
+
+/usr/include/c++/13/tr1/modified_bessel_func.tcc:
+
 /usr/include/boost/mpl/aux_/has_type.hpp:
 
 /usr/include/c++/13/tr1/ell_integral.tcc:
@@ -4325,6 +5496,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 /usr/include/c++/13/thread:
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/gz/msgs10/gz/msgs/dvl_beam_state.pb.h:
 
 /usr/include/eigen3/Eigen/src/Core/Redux.h:
 
@@ -4334,11 +5507,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/stdlib.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/topic_info.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/server_control.pb.h:
+
 /usr/include/gz/transport13/gz/transport/HandlerStorage.hh:
 
 /usr/include/c++/13/stdexcept:
 
 /usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/air_speed.pb.h:
 
 /usr/include/c++/13/sstream:
 
@@ -4346,27 +5525,39 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h:
 
-/usr/include/c++/13/pstl/pstl_config.h:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_servo_output_raw.h:
+
+/usr/include/eigen3/Eigen/src/Core/Ref.h:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/imagegeom.pb.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_actuator_controls.h:
+
+/usr/include/c++/13/map:
 
 /usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h:
 
 /usr/include/boost/mpl/arg_fwd.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h:
+/usr/include/gz/msgs10/gz/msgs/details/raysensor.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_hygrometer_sensor.h:
+/usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h:
 
 /usr/include/boost/preprocessor/list/fold_left.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/model_configuration.pb.h:
+
 /usr/include/boost/mpl/void_fwd.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/particle_emitter.pb.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
 
 /usr/include/c++/13/functional:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_information.h:
 
 /usr/include/boost/preprocessor/empty.hpp:
 
@@ -4374,7 +5565,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/nttp_decl.hpp:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_rc_channels.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/request.pb.h:
+
+/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
+
 /usr/include/google/protobuf/inlined_string_field.h:
+
+/usr/include/gz/transport13/gz/transport/Helpers.hh:
 
 /usr/include/gz/transport13/gz/transport/detail/Export.hh:
 
@@ -4382,15 +5581,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/limits.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/sensor_noise.pb.h:
+
 /usr/include/c++/13/cstdio:
-
-/usr/include/gz/msgs10/gz/msgs/pointcloud_packed.pb.h:
-
-/usr/include/math.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
+/usr/include/gz/msgs10/gz/msgs/gz.hh:
+
 /usr/include/c++/13/cstddef:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_self_id.h:
+
+/usr/include/c++/13/chrono:
 
 /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
 
@@ -4402,9 +5605,7 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/cctype:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_radio_status.h:
-
-/usr/include/c++/13/optional:
+/usr/include/gz/msgs10/gz/msgs/details/clock.pb.h:
 
 /usr/include/c++/13/bits/vector.tcc:
 
@@ -4414,15 +5615,21 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/preprocessor/config/config.hpp:
 
+/usr/include/gz/math7/gz/math/config.hh:
+
 /usr/include/c++/13/bits/unique_lock.h:
 
 /usr/include/c++/13/bits/streambuf_iterator.h:
 
 /usr/include/c++/13/bits/stream_iterator.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/logical_camera_image.pb.h:
+
 /usr/include/c++/13/bits/stl_tree.h:
 
 /usr/include/c++/13/bits/stl_relops.h:
+
+/usr/include/asm-generic/sockios.h:
 
 /usr/include/c++/13/bits/stl_raw_storage_iter.h:
 
@@ -4434,9 +5641,9 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/stl_construct.h:
 
-/usr/include/boost/mpl/empty_fwd.hpp:
-
 /usr/include/c++/13/bits/stl_algo.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h:
 
@@ -4444,7 +5651,7 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/initializer_list:
 
-/usr/include/c++/13/bits/std_thread.h:
+/usr/include/gz/msgs10/gz/msgs/details/distortion.pb.h:
 
 /usr/include/eigen3/Eigen/src/Core/Visitor.h:
 
@@ -4453,6 +5660,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 /usr/include/c++/13/bits/shared_ptr_atomic.h:
 
 /usr/include/c++/13/bits/refwrap.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/polylinegeom.pb.h:
 
 /usr/include/c++/13/bits/predefined_ops.h:
 
@@ -4464,15 +5673,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/bind.hpp:
 
-/usr/include/gz/msgs10/gz/msgs/detail/Export.hh:
-
-/usr/include/c++/13/map:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_actuator_controls.h:
-
 /usr/include/boost/mpl/lambda.hpp:
 
 /usr/include/c++/13/system_error:
+
+/usr/include/mavsdk/mavlink/mavlink_types.h:
+
+/usr/include/gz/msgs10/gz/msgs/air_pressure_sensor.pb.h:
 
 /usr/include/c++/13/bits/ostream.tcc:
 
@@ -4484,7 +5691,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/pcl-1.14/pcl/console/print.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_power_status.h:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_log_request_data.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/wrench.pb.h:
+
+/usr/include/boost/mpl/apply.hpp:
 
 /usr/include/boost/config/detail/select_compiler_config.hpp:
 
@@ -4496,6 +5707,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/preprocessor/arithmetic/limits/dec_256.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/details/lidar_sensor.pb.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/c++/13/bits/move.h:
@@ -4504,9 +5717,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/config/detail/suffix.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/details/actuators.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/model_v.pb.h:
+
 /usr/include/c++/13/bits/locale_classes.tcc:
 
+/usr/include/gz/transport13/gz/transport/NetUtils.hh:
+
 /usr/include/c++/13/bits/locale_classes.h:
+
+/usr/include/gz/msgs10/gz/msgs/world_modify.pb.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
 
@@ -4521,6 +5742,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 /usr/include/boost/mpl/long.hpp:
 
 /usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/publishers.pb.h:
 
 /usr/include/c++/13/bits/hashtable_policy.h:
 
@@ -4550,15 +5773,23 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/limits/vector.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/rest_response.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_count.h:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_attitude_quaternion.h:
 
-/usr/include/c++/13/bits/atomic_base.h:
+/usr/include/c++/13/bits/basic_ios.tcc:
 
 /usr/include/eigen3/Eigen/src/Core/MapBase.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_system.h:
+
+/usr/include/gz/msgs10/gz/msgs/collision.pb.h:
+
 /usr/include/c++/13/unordered_map:
+
+/usr/include/x86_64-linux-gnu/bits/sigstack.h:
 
 /usr/include/c++/13/bits/allocator.h:
 
@@ -4588,11 +5819,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_set_position_target_local_ned.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/marker_v.pb.h:
+
 /usr/include/boost/preprocessor/tuple/eat.hpp:
 
 /usr/include/pcl-1.14/pcl/types.h:
 
 /usr/include/eigen3/Eigen/src/Core/IO.h:
+
+/usr/include/gz/msgs10/gz/msgs/annotated_oriented_3d_box.pb.h:
 
 /usr/include/boost/mpl/aux_/config/static_constant.hpp:
 
@@ -4602,6 +5837,12 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/exception_defines.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_tracking_geo_status.h:
+
+/usr/include/boost/mpl/vector/aux_/push_back.hpp:
+
+/usr/include/boost/mpl/next.hpp:
+
 /usr/include/boost/preprocessor/seq/size.hpp:
 
 /usr/include/boost/mpl/aux_/config/dtp.hpp:
@@ -4610,11 +5851,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/preprocessor/seq/limits/fold_left_256.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_capture_status.h:
-
 /usr/include/boost/mpl/aux_/config/lambda.hpp:
 
+/usr/include/gz/transport13/gz/transport.hh:
+
 /usr/include/boost/preprocessor/seq/limits/elem_256.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/camera_info.pb.h:
 
 /usr/include/c++/13/cassert:
 
@@ -4623,6 +5866,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
 /usr/include/boost/preprocessor/seq/elem.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/details/sonar.pb.h:
 
 /usr/include/boost/preprocessor/repetition/repeat.hpp:
 
@@ -4638,6 +5883,10 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/iostream:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_named_value_int.h:
+
+/usr/include/boost/preprocessor/repetition/enum_params.hpp:
+
 /usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
@@ -4646,13 +5895,23 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_rc_channels_raw.h:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_extended_sys_state.h:
+
+/usr/include/c++/13/tr1/poly_laguerre.tcc:
+
+/usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
+
+/usr/include/boost/preprocessor/tuple/elem.hpp:
 
 /usr/include/boost/mpl/O1_size_fwd.hpp:
 
 /usr/include/boost/preprocessor/punctuation/comma.hpp:
 
 /usr/include/boost/mpl/integral_c_tag.hpp:
+
+/usr/include/google/protobuf/map_field.h:
+
+/usr/include/gz/msgs10/gz/msgs/pointcloud.pb.h:
 
 /usr/include/boost/preprocessor/repetition/detail/limits/for_256.hpp:
 
@@ -4668,8 +5927,6 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h:
 
-/usr/include/c++/13/ios:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/boost/preprocessor/logical/bool.hpp:
@@ -4678,7 +5935,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/preprocessor/tuple/rem.hpp:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mag_cal_report.h:
+
+/usr/include/google/protobuf/reflection_ops.h:
+
 /usr/include/boost/mpl/plus.hpp:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_local_position_ned_cov.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/visual.pb.h:
+
+/usr/include/c++/13/ext/aligned_buffer.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
 
@@ -4702,8 +5969,6 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/iter_fold_if_impl.hpp:
 
-/usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
-
 /usr/include/c++/13/bits/unordered_map.h:
 
 /mnt/c/Users/anany/OneDrive/Drone/drone_planner/src/lidar_bridge.cpp:
@@ -4712,6 +5977,10 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_global_vision_position_estimate.h:
+
+/usr/include/gz/math7/gz/math/Export.hh:
+
 /usr/include/boost/mpl/assert.hpp:
 
 /usr/include/boost/preprocessor/list/fold_right.hpp:
@@ -4719,6 +5988,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 /usr/include/google/protobuf/generated_enum_util.h:
 
 /usr/include/boost/mpl/aux_/arity.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/altimeter.pb.h:
 
 /usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector20.hpp:
 
@@ -4742,6 +6013,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/gz/transport13/gz/transport/TopicStorage.hh:
 
+/usr/include/gz/msgs10/gz/msgs/details/wind.pb.h:
+
 /usr/include/c++/13/limits:
 
 /usr/include/c++/13/bits/chrono.h:
@@ -4750,15 +6023,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h:
 
-/usr/include/boost/preprocessor/repetition/enum_params.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_named_value_int.h:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_adsb_vehicle.h:
+
+/usr/include/boost/mpl/iter_fold_if.hpp:
 
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/boost/config/detail/cxx_composite.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/surface.pb.h:
 
 /usr/include/boost/mpl/apply_fwd.hpp:
 
@@ -4766,11 +6041,27 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/ctype.h:
 
+/usr/include/google/protobuf/map_field_lite.h:
+
 /usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
 
-/usr/include/google/protobuf/io/zero_copy_stream.h:
-
 /usr/include/boost/mpl/aux_/config/bcc.hpp:
+
+/usr/include/tinyxml2.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_manual_control.h:
+
+/usr/include/gz/msgs10/gz/msgs/spheregeom.pb.h:
+
+/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/atmosphere.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_attitude.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/road.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/joystick.pb.h:
 
 /usr/include/boost/mpl/aux_/na.hpp:
 
@@ -4786,9 +6077,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/config/typeof.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/heightmapgeom.pb.h:
+
 /usr/include/boost/preprocessor/seq/transform.hpp:
 
 /usr/include/boost/mpl/aux_/config/pp_counter.hpp:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/fuel_metadata.pb.h:
 
 /usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
 
@@ -4796,13 +6093,9 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_raw_rpm.h:
-
 /usr/include/mavsdk/mavlink/protocol.h:
 
 /usr/include/pcl-1.14/pcl/memory.h:
-
-/usr/include/c++/13/pstl/glue_memory_defs.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
@@ -4810,21 +6103,27 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/begin_end_impl.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_request.h:
-
 /usr/include/eigen3/Eigen/src/Core/Matrix.h:
 
 /usr/include/c++/13/cstring:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
+/usr/include/gz/msgs10/gz/msgs/boolean.pb.h:
+
 /usr/include/boost/preprocessor/list/limits/fold_left_256.hpp:
 
 /usr/include/boost/mpl/tag.hpp:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_imu3.h:
+
+/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
+
 /usr/include/boost/preprocessor/arithmetic/inc.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/gz/msgs10/gz/msgs/gui_camera.pb.h:
 
 /usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
 
@@ -4832,13 +6131,27 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/find_if_pred.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/signum-arch.h:
+
 /usr/include/c++/13/unordered_set:
 
 /usr/include/boost/mpl/aux_/full_lambda.hpp:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_position_target_global_int.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/parameter_name.pb.h:
+
+/usr/include/gz/math7/gz/math/Matrix3.hh:
+
+/usr/include/gz/msgs10/gz/msgs/details/contactsensor.pb.h:
+
 /usr/include/boost/mpl/aux_/has_size.hpp:
 
 /usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/quaternion.pb.h:
+
+/usr/include/c++/13/cstdarg:
 
 /usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
@@ -4846,19 +6159,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/preprocessor/comparison/less_equal.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_follow_target.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/13/include/xmmintrin.h:
 
 /usr/include/c++/13/bits/unordered_set.h:
 
+/usr/include/gz/math7/gz/math/Line3.hh:
+
 /usr/include/boost/preprocessor/arithmetic/dec.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_raw_imu.h:
-
 /usr/include/boost/mpl/aux_/contains_impl.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_flight_information.h:
 
 /usr/include/c++/13/bits/stl_vector.h:
 
@@ -4866,19 +6175,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/value_wknd.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/details/undo_redo.pb.h:
+
 /usr/include/c++/13/bits/align.h:
-
-/usr/include/boost/mpl/apply_wrap.hpp:
-
-/usr/include/c++/13/bits/ptr_traits.h:
-
-/usr/include/boost/mpl/aux_/adl_barrier.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessor/default_params.hpp:
 
 /usr/include/boost/mpl/vector/aux_/tag.hpp:
 
-/usr/include/boost/mpl/aux_/static_cast.hpp:
+/usr/include/gz/msgs10/gz/msgs/air_speed.pb.h:
 
 /usr/include/boost/mpl/aux_/config/preprocessor.hpp:
 
@@ -4898,6 +6203,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Geometry/Transform.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/entity_factory_v.pb.h:
+
 /usr/include/boost/mpl/O1_size.hpp:
 
 /usr/include/boost/mpl/if.hpp:
@@ -4908,27 +6215,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/MathFunctions.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_logging_data_acked.h:
+
+/usr/include/boost/mpl/always.hpp:
+
 /usr/include/linux/limits.h:
 
-/usr/include/c++/13/bits/string_view.tcc:
-
 /usr/include/boost/mpl/and.hpp:
-
-/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
 
 /usr/include/c++/13/bits/node_handle.h:
 
 /usr/include/gz/msgs10/gz/msgs/details/discovery.pb.h:
 
 /usr/include/gz/transport13/gz/transport/Export.hh:
-
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_attitude_quaternion.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_encapsulated_data.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_orbit_execution_status.h:
 
 /usr/include/boost/mpl/aux_/config/forwarding.hpp:
 
@@ -4942,13 +6241,21 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/gz/msgs10/gz/msgs/statistic.pb.h:
 
+/usr/include/gz/msgs10/gz/msgs/vector2d.pb.h:
+
 /usr/include/c++/13/cwctype:
 
 /usr/include/boost/preprocessor/detail/check.hpp:
 
 /usr/include/eigen3/Eigen/src/Geometry/Scaling.h:
 
-/usr/include/boost/mpl/aux_/na_fwd.hpp:
+/usr/include/gz/msgs10/gz/msgs/rest_logout.pb.h:
+
+/usr/include/c++/13/optional:
+
+/usr/include/gz/msgs10/gz/msgs/details/battery.pb.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
 
@@ -4956,7 +6263,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_data_stream.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/model_configuration.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/time.pb.h:
+
 /usr/include/boost/preprocessor/list/detail/limits/fold_right_256.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/pose_v.pb.h:
 
 /usr/include/boost/preprocessor/repetition/for.hpp:
 
@@ -4964,17 +6279,25 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/config/platform/linux.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
+
 /usr/include/boost/preprocessor/facilities/empty.hpp:
 
 /usr/include/google/protobuf/stubs/macros.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/details/fluid_pressure.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/usr/include/boost/mpl/aux_/arity_spec.hpp:
+/usr/include/gz/msgs10/gz/msgs/convert/JointType.hh:
+
+/usr/include/gz/msgs10/gz/msgs/details/model_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/material.pb.h:
 
 /usr/include/c++/13/iosfwd:
 
@@ -4984,13 +6307,37 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/current_function.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/diagnostics.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/Solve.h:
 
 /usr/include/boost/mpl/aux_/type_wrapper.hpp:
 
+/usr/include/google/protobuf/map_entry.h:
+
 /usr/include/boost/preprocessor/list/adt.hpp:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_rc_channels_override.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_control_system_state.h:
+
+/usr/include/c++/13/bits/stl_map.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_write_partial_list.h:
+
+/usr/include/gz/msgs10/gz/msgs/int32_v.pb.h:
+
+/usr/include/google/protobuf/stubs/stl_util.h:
+
+/usr/include/gz/msgs10/gz/msgs/double_v.pb.h:
+
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/gz/msgs10/gz/msgs/subscribe.pb.h:
+
+/usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
+
+/usr/include/c++/13/locale:
 
 /usr/include/boost/mpl/aux_/numeric_op.hpp:
 
@@ -4998,9 +6345,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/gz/transport13/gz/transport/NodeShared.hh:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_request_list.h:
+
+/usr/include/c++/13/bits/concept_check.h:
+
 /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
 
 /usr/include/boost/preprocessor/list/detail/fold_left.hpp:
+
+/usr/include/gz/math7/gz/math/SemanticVersion.hh:
 
 /usr/include/boost/mpl/aux_/config/gpu.hpp:
 
@@ -5024,7 +6377,9 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
 
-/usr/include/boost/mpl/vector/aux_/item.hpp:
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/gz/msgs10/gz/msgs/physics.pb.h:
 
 /usr/include/c++/13/istream:
 
@@ -5042,21 +6397,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/largest_int.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/details/subscribe.pb.h:
+
 /usr/include/boost/preprocessor/control/iif.hpp:
 
 /usr/include/boost/config/user.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_safety_set_allowed_area.h:
-
-/usr/include/pcl-1.14/pcl/PCLPointField.h:
+/usr/include/gz/msgs10/gz/msgs/convert/Inertial.hh:
 
 /usr/include/boost/mpl/at_fwd.hpp:
 
 /usr/include/boost/mpl/has_xxx.hpp:
 
 /usr/include/boost/mpl/prior.hpp:
-
-/usr/include/eigen3/Eigen/Geometry:
 
 /usr/include/c++/13/bits/charconv.h:
 
@@ -5066,11 +6419,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
 
+/usr/include/eigen3/Eigen/src/Core/Random.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/entity_wrench_map.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/world_stats.pb.h:
+
 /usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
 
 /usr/include/boost/preprocessor/detail/limits/auto_rec_256.hpp:
-
-/usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
@@ -5086,13 +6443,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/locale_facets.tcc:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_request_data_stream.h:
-
 /usr/include/boost/mpl/aux_/config/eti.hpp:
 
 /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h:
 
 /usr/include/boost/config/compiler/gcc.hpp:
+
+/usr/include/google/protobuf/map_field_inl.h:
 
 /usr/include/eigen3/Eigen/src/Cholesky/LLT.h:
 
@@ -5102,7 +6459,7 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/int.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_safety_allowed_area.h:
+/usr/include/gz/msgs10/gz/msgs/details/boolean.pb.h:
 
 /usr/include/boost/mpl/aux_/config/workaround.hpp:
 
@@ -5110,9 +6467,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_uavcan_node_info.h:
 
+/usr/include/gz/msgs10/gz/msgs/entity_wrench.pb.h:
+
 /usr/include/boost/mpl/aux_/common_name_wknd.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mag_cal_report.h:
+/usr/include/gz/msgs10/gz/msgs/vector3d.pb.h:
 
 /usr/include/boost/mpl/aux_/has_apply.hpp:
 
@@ -5126,31 +6485,21 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/pair.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_ping.h:
-
 /usr/include/boost/preprocessor/control/while.hpp:
 
 /usr/include/boost/config/detail/select_platform_config.hpp:
 
-/usr/include/c++/13/cstdint:
-
-/usr/include/boost/mpl/integral_c_fwd.hpp:
-
-/usr/include/gz/msgs10/gz/msgs/header.pb.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_location.h:
+/usr/include/gz/msgs10/gz/msgs/details/ellipsoidgeom.pb.h:
 
 /usr/include/boost/detail/workaround.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_command_long.h:
-
 /usr/include/boost/mpl/aux_/msvc_never_true.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
-
-/usr/include/boost/mpl/aux_/msvc_eti_base.hpp:
-
 /usr/include/boost/preprocessor/variadic/limits/size_64.hpp:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_estimator_status.h:
+
+/usr/include/boost/config/detail/posix_features.hpp:
 
 /usr/include/boost/preprocessor/arithmetic/add.hpp:
 
@@ -5158,7 +6507,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/std_abs.h:
 
+/usr/include/gz/msgs10/gz/msgs/propagation_grid.pb.h:
+
 /usr/include/linux/errno.h:
+
+/usr/include/gz/msgs10/gz/msgs/altimeter_sensor.pb.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
 
@@ -5168,6 +6521,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/msvc_type.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/details/link_data.pb.h:
+
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/boost/preprocessor/array/size.hpp:
@@ -5176,9 +6531,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/preprocessor/inc.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_cellular_config.h:
-
 /usr/include/boost/mpl/aux_/has_begin.hpp:
+
+/usr/include/mavsdk/autopilot.h:
+
+/usr/include/boost/mpl/same_as.hpp:
+
+/usr/include/c++/13/bits/sstream.tcc:
+
+/usr/include/boost/mpl/limits/arity.hpp:
 
 /usr/include/boost/preprocessor/control/detail/while.hpp:
 
@@ -5192,19 +6553,31 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp:
 
+/usr/include/boost/mpl/aux_/msvc_eti_base.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/convert/DiscoveryType.hh:
+
 /usr/include/boost/mpl/aux_/config/adl.hpp:
 
+/usr/include/google/protobuf/any.pb.h:
+
 /usr/include/boost/mpl/aux_/config/bind.hpp:
+
+/usr/include/c++/13/bits/std_thread.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/cameratrack.pb.h:
 
 /usr/include/boost/preprocessor/list/reverse.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/Transpositions.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_setup_signing.h:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_ais_vessel.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_illuminator_status.h:
+/usr/include/gz/msgs10/gz/msgs/joint.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_current.h:
+/usr/include/c++/13/string_view:
+
+/usr/include/boost/mpl/aux_/config/compiler.hpp:
 
 /usr/include/c++/13/debug/debug.h:
 
@@ -5218,15 +6591,33 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/shared_ptr_base.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_request_read.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/statistic.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_local_position_ned_system_global_offset.h:
+
+/usr/include/boost/mpl/aux_/traits_lambda_spec.hpp:
+
 /usr/include/c++/13/bits/stl_multimap.h:
 
 /usr/include/boost/config.hpp:
 
-/usr/include/boost/mpl/vector/aux_/O1_size.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/13/exception:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_global_position_int.h:
+
+/usr/include/eigen3/Eigen/src/Core/SolveTriangular.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_collision.h:
+
+/usr/include/gz/msgs10/gz/msgs/MessageFactory.hh:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_attitude_quaternion_cov.h:
+
+/usr/include/gz/transport13/gz/transport/TopicStatistics.hh:
 
 /usr/include/boost/mpl/aux_/lambda_support.hpp:
 
@@ -5246,17 +6637,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/google/protobuf/stubs/mutex.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_uavcan_node_status.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_clear_all.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_command_int.h:
+/usr/include/gz/math7/gz/math/Angle.hh:
 
 /usr/include/boost/mpl/bool.hpp:
 
 /usr/include/boost/mpl/vector/vector20.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/Array.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_inject_data.h:
+
+/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/StlIterators.h:
 
@@ -5268,11 +6659,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/clear_fwd.hpp:
 
+/usr/include/gz/msgs10/gz/msgs.hh:
+
 /usr/include/boost/mpl/contains.hpp:
 
 /usr/include/c++/13/ratio:
 
 /usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h:
+
+/usr/include/gz/msgs10/gz/msgs/convert/Color.hh:
 
 /usr/include/eigen3/Eigen/src/Core/DenseStorage.h:
 
@@ -5288,9 +6683,9 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/Map.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
 /usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_basic_id.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/boost/mpl/find.hpp:
 
@@ -5308,19 +6703,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/SVD/SVDBase.h:
 
-/usr/include/gz/msgs10/gz/msgs/details/statistic.pb.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_request_read.h:
+/usr/include/gz/msgs10/gz/msgs/serialized_map.pb.h:
 
 /usr/include/eigen3/Eigen/Householder:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h:
-
-/usr/include/c++/13/debug/assertions.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_resource_request.h:
-
-/usr/include/boost/mpl/placeholders.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/util/Meta.h:
 
@@ -5338,9 +6725,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
+/usr/include/gz/msgs10/gz/msgs/convert/FuelMetadata.hh:
+
 /usr/include/boost/preprocessor/comparison/equal.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/NoAlias.h:
+
+/usr/include/gz/msgs10/gz/msgs/fog.pb.h:
 
 /usr/include/boost/mpl/integral_c.hpp:
 
@@ -5350,7 +6741,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/cxxabi_init_exception.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/navsat.pb.h:
+
 /usr/include/boost/mpl/advance_fwd.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/data_load_options.pb.h:
 
 /usr/include/boost/mpl/numeric_cast.hpp:
 
@@ -5358,7 +6753,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
 
+/usr/include/mavsdk/mavlink_include.h:
+
+/usr/include/gz/msgs10/gz/msgs/clock.pb.h:
+
 /usr/include/boost/mpl/logical.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/details/occupancy_grid.pb.h:
 
 /usr/include/boost/mpl/vector/aux_/begin_end.hpp:
 
@@ -5366,35 +6767,53 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/vector/aux_/pop_back.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_global_vision_position_estimate.h:
+/usr/include/gz/msgs10/gz/msgs/pid.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/plugin.pb.h:
 
 /usr/include/boost/preprocessor/comparison/not_equal.hpp:
 
 /usr/include/eigen3/Eigen/src/LU/Determinant.h:
 
+/usr/include/zmq.hpp:
+
 /usr/include/boost/preprocessor/repeat.hpp:
 
 /usr/include/google/protobuf/arena_impl.h:
+
+/usr/include/gz/msgs10/gz/msgs/any.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_named_value_float.h:
+
+/usr/include/boost/preprocessor/seq/detail/is_empty.hpp:
+
+/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_item.h:
+
+/usr/include/boost/preprocessor/identity.hpp:
+
+/usr/include/eigen3/Eigen/StdVector:
 
 /usr/include/c++/13/future:
 
 /usr/include/boost/mpl/aux_/has_tag.hpp:
 
-/usr/include/boost/mpl/or.hpp:
+/usr/include/gz/msgs10/gz/msgs/visual_v.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_set_attitude.h:
+/usr/include/boost/mpl/or.hpp:
 
 /usr/include/boost/preprocessor/variadic/limits/elem_64.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/contact.pb.h:
 
 /usr/include/boost/mpl/pop_front_fwd.hpp:
 
 /usr/include/boost/mpl/vector/aux_/push_front.hpp:
 
 /usr/include/c++/13/bits/stl_multiset.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_component_information_basic.h:
 
 /usr/include/boost/mpl/aux_/config/nttp.hpp:
 
@@ -5404,6 +6823,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/ext/type_traits.h:
 
+/usr/include/gz/msgs10/gz/msgs/world_control.pb.h:
+
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h:
@@ -5412,15 +6833,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_mission_request_int.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/link.pb.h:
+
 /usr/include/boost/mpl/size_fwd.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:
 
 /usr/include/boost/mpl/vector.hpp:
 
+/usr/include/linux/stddef.h:
+
 /usr/include/boost/mpl/vector/aux_/at.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_current_event_sequence.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_onboard_computer_status.h:
+/usr/include/gz/msgs10/gz/msgs/air_speed_sensor.pb.h:
 
 /usr/include/boost/mpl/vector/aux_/clear.hpp:
 
@@ -5444,11 +6869,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/vector/aux_/include_preprocessed.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_log_entry.h:
+/usr/include/boost/mpl/empty_fwd.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/details/float_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/battery_state.pb.h:
 
 /usr/include/boost/preprocessor/detail/auto_rec.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/Replicate.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_odometry.h:
+
+/usr/include/boost/mpl/vector/aux_/pop_front.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/SolverBase.h:
 
@@ -5472,7 +6905,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/mpl/aux_/numeric_cast_utils.hpp:
 
+/usr/include/gz/msgs10/gz/msgs/axis_aligned_2d_box.pb.h:
+
 /usr/include/boost/preprocessor/facilities/overload.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/details/shadows.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/int64.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/joint_trajectory_point.pb.h:
 
 /usr/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h:
 
@@ -5490,43 +6931,43 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/math.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/geometry.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
 
 /usr/include/c++/13/ext/numeric_traits.h:
 
 /usr/include/c++/13/bits/stl_iterator.h:
 
-/usr/include/boost/mpl/apply.hpp:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_status.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_log_request_data.h:
+/usr/include/c++/13/bits/stl_set.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/float.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/uint32.pb.h:
 
 /usr/include/boost/mpl/aux_/config/ctps.hpp:
 
+/usr/include/boost/mpl/aux_/adl_barrier.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/details/dvl_tracking_target.pb.h:
+
 /usr/include/boost/mpl/void.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/details/versioned_name.pb.h:
 
 /usr/include/c++/13/ostream:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_set_current.h:
-
 /usr/include/boost/preprocessor/arithmetic/detail/maximum_number.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_can_filter_modify.h:
-
-/usr/include/google/protobuf/stubs/stl_util.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_write_partial_list.h:
 
 /usr/include/c++/13/bits/localefwd.h:
 
+/usr/include/gz/msgs10/gz/msgs/server_control.pb.h:
+
 /usr/include/pcl-1.14/pcl/type_traits.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_arm_status.h:
-
 /usr/include/boost/preprocessor/array/elem.hpp:
-
-/usr/include/gz/transport13/gz/transport/TopicStatistics.hh:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_attitude_quaternion_cov.h:
 
 /usr/include/assert.h:
 
@@ -5540,29 +6981,41 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/preprocessor/comparison/limits/not_equal_256.hpp:
 
+/usr/include/gz/math7/gz/math/detail/Export.hh:
+
+/usr/include/gz/msgs10/gz/msgs/dataframe.pb.h:
+
 /usr/include/boost/preprocessor/control/if.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/Fuzzy.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
+/usr/include/boost/mpl/apply_wrap.hpp:
+
+/usr/include/c++/13/bits/locale_conv.h:
+
 /usr/include/boost/preprocessor/control/limits/while_256.hpp:
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_imu2.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/spherical_coordinates.pb.h:
 
 /usr/include/boost/mpl/aux_/fold_impl.hpp:
 
 /usr/include/gz/utils2/gz/utils/Export.hh:
 
+/usr/include/gz/msgs10/gz/msgs/details/joint_animation.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/NestByValue.h:
 
 /usr/include/boost/preprocessor/facilities/identity.hpp:
 
-/usr/include/pcl-1.14/pcl/octree/octree_key.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_optical_flow.h:
+/usr/include/gz/msgs10/gz/msgs/details/log_status.pb.h:
 
 /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/serialized_map.pb.h:
 
 /usr/include/boost/preprocessor/debug/error.hpp:
 
@@ -5586,8 +7039,6 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/boost/preprocessor/list/detail/limits/fold_left_256.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_system.h:
-
 /usr/include/eigen3/Eigen/src/Core/ReturnByValue.h:
 
 /usr/include/eigen3/Eigen/src/Core/Reverse.h:
@@ -5602,9 +7053,21 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_state.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/stringmsg_v.pb.h:
+
+/usr/include/google/protobuf/repeated_field.h:
+
+/usr/include/eigen3/Eigen/src/Core/VectorBlock.h:
+
+/usr/include/gz/msgs10/gz/msgs/pose_with_covariance.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h:
 
 /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h:
+
+/usr/include/gz/msgs10/gz/msgs/meshgeom.pb.h:
 
 /usr/include/c++/13/bits/stl_function.h:
 
@@ -5616,25 +7079,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/LU/FullPivLU.h:
 
+/usr/include/gz/msgs10/gz/msgs/parameter_value.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h:
 
 /usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_global_position_int_cov.h:
+
+/usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:
+
 /usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h:
 
 /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_file_transfer_protocol.h:
-
-/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_manual_control.h:
-
-/usr/include/google/protobuf/repeated_field.h:
-
-/usr/include/eigen3/Eigen/src/Core/VectorBlock.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_state.h:
 
 /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
 
@@ -5642,9 +7099,7 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h:
 
-/usr/include/boost/preprocessor/logical/and.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h:
+/usr/include/gz/msgs10/gz/msgs/details/joint.pb.h:
 
 /usr/include/eigen3/Eigen/src/LU/InverseImpl.h:
 
@@ -5654,15 +7109,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/contacts.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h:
 
 /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h:
 
-/usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h:
-
-/usr/include/eigen3/Eigen/src/Core/Select.h:
+/usr/include/gz/msgs10/gz/msgs/convert/Plane.hh:
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_memory_vect.h:
+
+/usr/include/eigen3/Eigen/src/Core/Select.h:
 
 /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h:
 
@@ -5676,7 +7133,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/gz/transport13/gz/transport/config.hh:
 
+/usr/include/gz/msgs10/gz/msgs/detail/Export.hh:
+
+/usr/include/gz/msgs10/gz/msgs/details/dvl_range_estimate.pb.h:
+
 /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/model.pb.h:
 
 /usr/include/stdc-predef.h:
 
@@ -5684,35 +7147,43 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Core/util/Constants.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/gps.pb.h:
+
 /usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h:
 
 /usr/include/eigen3/Eigen/src/Core/util/IntegralConstant.h:
 
+/usr/include/gz/msgs10/gz/msgs/pointcloud_packed.pb.h:
+
+/usr/include/math.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/cessna.pb.h:
+
+/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
+
 /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h:
-
-/usr/include/mavsdk/component_type.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_command_ack.h:
 
 /usr/include/eigen3/Eigen/src/Core/util/Memory.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_ack.h:
-
 /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
 
-/usr/include/boost/mpl/arg.hpp:
-
-/usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
-
 /usr/include/google/protobuf/map.h:
+
+/usr/include/gz/msgs10/gz/msgs/world_reset.pb.h:
 
 /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h:
 
 /usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
 
+/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
+
+/usr/include/asm-generic/bitsperlong.h:
+
 /usr/include/c++/13/vector:
 
 /usr/include/eigen3/Eigen/src/Geometry/OrthoMethods.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/color.pb.h:
 
 /usr/include/eigen3/Eigen/src/Geometry/RotationBase.h:
 
@@ -5720,11 +7191,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Geometry/Translation.h:
 
-/usr/include/c++/13/chrono:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mount_orientation.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_self_id.h:
+/usr/include/c++/13/bits/requires_hosted.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_value.h:
+/usr/include/gz/utils2/gz/utils/ImplPtr.hh:
 
 /usr/include/c++/13/bits/shared_ptr.h:
 
@@ -5760,19 +7231,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h:
 
-/usr/include/c++/13/string_view:
-
-/usr/include/boost/mpl/aux_/config/compiler.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_ais_vessel.h:
-
 /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h:
+
+/usr/include/gz/msgs10/gz/msgs/light.pb.h:
 
 /usr/include/eigen3/Eigen/src/misc/Image.h:
 
 /usr/include/eigen3/Eigen/src/misc/Kernel.h:
 
-/usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
+/usr/include/mavsdk/mavlink/common/common.h:
+
+/usr/include/gz/msgs10/gz/msgs/battery_state.pb.h:
 
 /usr/include/c++/13/utility:
 
@@ -5780,7 +7249,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_trigger.h:
+/usr/include/gz/msgs10/gz/msgs/convert/Quaternion.hh:
+
+/usr/include/gz/msgs10/gz/msgs/details/data_load_options.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_request_partial_list.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/dvl_kinematic_estimate.pb.h:
 
 /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:
 
@@ -5788,15 +7263,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/plugins/ReshapedMethods.h:
 
+/usr/include/gz/msgs10/gz/msgs/camerasensor.pb.h:
+
 /usr/include/boost/mpl/minus.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h:
 
 /usr/include/endian.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_settings.h:
+/usr/include/gz/msgs10/gz/msgs/inertial.pb.h:
 
 /usr/include/errno.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/world_control_state.pb.h:
 
 /usr/include/google/protobuf/any.h:
 
@@ -5806,37 +7285,37 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/google/protobuf/arenastring.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/entity.pb.h:
+
 /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/google/protobuf/arenaz_sampler.h:
 
-/usr/include/eigen3/Eigen/src/Core/CommaInitializer.h:
-
-/usr/include/google/protobuf/descriptor.h:
-
 /usr/include/google/protobuf/endian.h:
 
+/usr/include/gz/msgs10/gz/msgs/twist.pb.h:
+
 /usr/include/google/protobuf/extension_set.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
 
 /usr/include/boost/mpl/vector/aux_/iterator.hpp:
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h:
 
+/usr/include/gz/msgs10/gz/msgs/float.pb.h:
+
 /usr/include/google/protobuf/generated_message_reflection.h:
 
-/usr/include/google/protobuf/generated_message_util.h:
+/usr/include/gz/msgs10/gz/msgs/details/world_reset.pb.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/boost/mpl/eval_if.hpp:
 
 /usr/include/google/protobuf/implicit_weak_message.h:
-
-/usr/include/mavsdk/server_component.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_high_latency2.h:
 
 /usr/include/google/protobuf/io/zero_copy_stream_impl_lite.h:
 
@@ -5845,8 +7324,6 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 /usr/include/google/protobuf/map_type_handler.h:
 
 /usr/include/google/protobuf/message_lite.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_isbd_link_status.h:
 
 /usr/include/google/protobuf/parse_context.h:
 
@@ -5858,35 +7335,59 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/google/protobuf/stubs/common.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_autopilot_version.h:
+/usr/include/boost/mpl/arg.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_message_interval.h:
+/usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
+
+/usr/include/gz/msgs10/gz/msgs/convert/ShaderType.hh:
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
 /usr/include/google/protobuf/stubs/logging.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_device_attitude_status.h:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_debug.h:
+
+/usr/include/google/protobuf/stubs/once.h:
 
 /usr/include/google/protobuf/stubs/platform_macros.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_position_target_global_int.h:
+/usr/include/boost/mpl/aux_/na_fwd.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/details/actor.pb.h:
 
 /usr/include/google/protobuf/stubs/status.h:
 
 /usr/include/google/protobuf/stubs/strutil.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_information.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
 /usr/include/google/protobuf/unknown_field_set.h:
+
+/usr/include/gz/msgs10/gz/msgs/lens.pb.h:
+
+/usr/include/c++/13/pstl/glue_memory_defs.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/air_speed_sensor.pb.h:
 
 /usr/include/features.h:
 
 /usr/include/gz/msgs10/gz/msgs/Export.hh:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_status.h:
+/usr/include/gz/msgs10/gz/msgs/actuators.pb.h:
 
 /usr/include/gz/msgs10/gz/msgs/config.hh:
 
+/usr/include/arpa/inet.h:
+
+/usr/include/gz/msgs10/gz/msgs/twist_with_covariance.pb.h:
+
 /usr/include/gz/msgs10/gz/msgs/details/empty.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_generator_status.h:
+
+/usr/include/gz/msgs10/gz/msgs/discovery.pb.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
@@ -5898,15 +7399,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/gz/transport13/gz/transport/Node.hh:
 
+/usr/include/gz/msgs10/gz/msgs/parameter_error.pb.h:
+
+/usr/include/gz/math7/gz/math/Quaternion.hh:
+
 /usr/include/gz/transport13/gz/transport/AdvertiseOptions.hh:
 
 /usr/include/gz/utils2/gz/utils/detail/Export.hh:
 
 /usr/include/gz/transport13/gz/transport/MessageInfo.hh:
 
-/usr/include/gz/transport13/gz/transport/NodeOptions.hh:
+/usr/include/gz/msgs10/gz/msgs/occupancy_grid.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_param_request_list.h:
+/usr/include/gz/transport13/gz/transport/NodeOptions.hh:
 
 /usr/include/gz/transport13/gz/transport/Publisher.hh:
 
@@ -5918,11 +7423,21 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/linux/close_range.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_authentication.h:
-
 /usr/include/gz/transport13/gz/transport/SubscriptionHandler.hh:
 
+/usr/include/mavsdk/vehicle.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/boxgeom.pb.h:
+
 /usr/include/gz/transport13/gz/transport/TopicUtils.hh:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_pressure2.h:
+
+/usr/include/boost/mpl/aux_/config/ttp.hpp:
+
+/usr/include/gz/transport13/gz/transport/Uuid.hh:
+
+/usr/include/gz/msgs10/gz/msgs/details/marker.pb.h:
 
 /usr/include/google/protobuf/io/coded_stream.h:
 
@@ -5932,19 +7447,31 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/gz/utils2/gz/utils/detail/DefaultOps.hh:
 
-/usr/include/gz/utils2/gz/utils/detail/ImplPtr.hh:
-
 /usr/include/gz/utils2/gz/utils/detail/SuppressWarning.hh:
+
+/usr/include/gz/msgs10/gz/msgs/details/dvl_velocity_tracking.pb.h:
 
 /usr/include/locale.h:
 
 /usr/include/pcl-1.14/pcl/PCLHeader.h:
 
+/usr/include/gz/msgs10/gz/msgs/topic_info.pb.h:
+
 /usr/include/pcl-1.14/pcl/exceptions.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
 
 /usr/include/google/protobuf/stubs/port.h:
 
 /usr/include/pcl-1.14/pcl/impl/point_types.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_set_manual_control.h:
+
+/usr/include/gz/msgs10/gz/msgs/fuel_metadata.pb.h:
+
+/usr/include/sched.h:
 
 /usr/include/pcl-1.14/pcl/pcl_exports.h:
 
@@ -5952,7 +7479,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/wheel_slip_parameters_cmd.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/camera_cmd.pb.h:
+
 /usr/include/pcl-1.14/pcl/point_cloud.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/uint32_v.pb.h:
 
 /usr/include/pcl-1.14/pcl/point_struct_traits.h:
 
@@ -5960,17 +7493,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
-
 /usr/include/mavsdk/mavlink/common/mavlink_msg_can_frame.h:
+
+/usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
 
 /usr/include/pcl-1.14/pcl/point_types.h:
 
 /usr/include/pcl-1.14/pcl/register_point_struct.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_attitude_target.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_link_node_status.h:
 
 /usr/include/pthread.h:
 
@@ -5978,9 +7507,9 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/stdint.h:
 
-/usr/include/stdio.h:
+/usr/include/gz/msgs10/gz/msgs/details/any.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_log_data.h:
+/usr/include/stdio.h:
 
 /usr/include/stdlib.h:
 
@@ -5990,9 +7519,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/time.h:
 
-/usr/include/unistd.h:
-
 /usr/include/uuid/uuid.h:
+
+/usr/include/gz/msgs10/gz/msgs/geometry.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/joint_trajectory_point.pb.h:
 
 /usr/include/c++/13/mutex:
 
@@ -6000,15 +7531,21 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/wctype.h:
 
-/usr/include/c++/13/compare:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
 /usr/include/mavsdk/mavlink/common/mavlink_msg_param_value.h:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/gz/msgs10/gz/msgs/uint64_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/marker_v.pb.h:
+
+/usr/include/eigen3/Eigen/src/Core/CommaInitializer.h:
+
+/usr/include/google/protobuf/descriptor.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/cmd_vel2d.pb.h:
 
 /usr/include/c++/13/set:
 
@@ -6016,23 +7553,29 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_actuator_output_status.h:
+/usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
+
+/usr/include/gz/msgs10/gz/msgs/contact.pb.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
+/usr/include/mavsdk/mavlink/common/mavlink_msg_local_position_ned.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_thermal_range.h:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
+/usr/include/libintl.h:
+
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/pose_v.pb.h:
 
 /usr/include/c++/13/bits/stl_bvector.h:
 
@@ -6044,19 +7587,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
-/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_rc_channels.h:
-
 /usr/include/boost/mpl/aux_/lambda_spec.hpp:
 
 /usr/include/google/protobuf/port_def.inc:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/density.pb.h:
+
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/gz/msgs10/gz/msgs/entity_factory_v.pb.h:
 
 /usr/include/c++/13/complex:
 
@@ -6066,25 +7609,25 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-/usr/include/gz/msgs10/gz/msgs/MessageFactory.hh:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_collision.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
+/usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
+
 /usr/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/joint_cmd.pb.h:
+
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_video_stream_information.h:
+
+/usr/include/gz/msgs10/gz/msgs/gps.pb.h:
 
 /usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector10.hpp:
 
@@ -6094,7 +7637,11 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
+/usr/include/gz/msgs10/gz/msgs/details/uint64_v.pb.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/magnetometer.pb.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
@@ -6109,6 +7656,8 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 /usr/include/mavsdk/mavlink/checksum.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/gz/msgs10/gz/msgs/axis.pb.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
@@ -6132,9 +7681,13 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
 /usr/include/c++/13/memory:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/gz/math7/gz/math/Plane.hh:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
@@ -6142,7 +7695,7 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_item_reached.h:
+/usr/include/gz/msgs10/gz/msgs/wireless_nodes.pb.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
@@ -6150,11 +7703,21 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
 
+/usr/include/gz/msgs10/gz/msgs/user_cmd.pb.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_high_latency.h:
+
+/usr/include/google/protobuf/generated_enum_reflection.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
 
 /usr/include/c++/13/tuple:
 
 /usr/include/c++/13/queue:
+
+/usr/include/gz/msgs10/gz/msgs/log_playback_control.pb.h:
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
 
@@ -6164,17 +7727,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_canfd_frame.h:
+/usr/include/boost/mpl/aux_/static_cast.hpp:
 
-/usr/include/boost/mpl/aux_/traits_lambda_spec.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_local_position_ned_system_global_offset.h:
+/usr/include/gz/math7/gz/math/Line2.hh:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /mnt/c/Users/anany/OneDrive/Drone/drone_planner/include/lidar_bridge.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/asm-generic/socket.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h:
 
@@ -6184,13 +7747,17 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_debug_vect.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
 /mnt/c/Users/anany/OneDrive/Drone/drone_planner/include/path_planner.h:
 
 /mnt/c/Users/anany/OneDrive/Drone/drone_planner/include/world_model.h:
+
+/usr/include/gz/math7/gz/math/Vector2.hh:
+
+/usr/include/google/protobuf/io/zero_copy_stream.h:
+
+/usr/include/asm-generic/posix_types.h:
 
 /usr/include/c++/13/bits/atomic_futex.h:
 
@@ -6200,15 +7767,19 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/deque.tcc:
 
+/usr/include/c++/13/bits/locale_facets_nonio.h:
+
+/usr/include/c++/13/bits/locale_facets_nonio.tcc:
+
+/usr/include/boost/mpl/vector/aux_/O1_size.hpp:
+
+/usr/include/c++/13/bits/quoted_string.h:
+
 /usr/include/string.h:
 
 /usr/include/c++/13/bits/stl_deque.h:
 
-/usr/include/google/protobuf/generated_enum_reflection.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_high_latency.h:
+/usr/include/gz/msgs10/gz/msgs/axis_aligned_box.pb.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
@@ -6216,17 +7787,15 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/c++/13/bits/stl_queue.h:
 
-/usr/include/boost/preprocessor/seq/detail/is_empty.hpp:
+/usr/include/gz/transport13/gz/transport/Discovery.hh:
 
-/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
+/usr/include/c++/13/pstl/pstl_config.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_named_value_float.h:
+/usr/include/c++/13/iomanip:
 
 /usr/include/asm-generic/errno.h:
 
 /usr/include/eigen3/Eigen/Dense:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_rc_inputs_raw.h:
 
 /usr/include/eigen3/Eigen/Eigenvalues:
 
@@ -6234,274 +7803,286 @@ CMakeFiles/uav_planner.dir/src/world_model.cpp.o: /mnt/c/Users/anany/OneDrive/Dr
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h:
 
-/usr/include/alloca.h:
+/usr/include/zmq.h:
 
-/usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
+/usr/include/mavsdk/plugins/telemetry/telemetry.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_set.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_log_request_end.h:
+
+/usr/include/gz/msgs10/gz/msgs/conegeom.pb.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
 
-/usr/include/boost/mpl/same_as.hpp:
+/usr/include/gz/msgs10/gz/msgs/details/world_control.pb.h:
 
-/usr/include/c++/13/bits/sstream.tcc:
+/usr/include/google/protobuf/map_entry_lite.h:
 
-/usr/include/boost/mpl/limits/arity.hpp:
+/usr/include/gz/math7/gz/math/AxisAlignedBox.hh:
 
-/usr/include/mavsdk/autopilot.h:
+/usr/include/gz/math7/gz/math/Color.hh:
 
-/usr/include/mavsdk/connection_result.h:
+/usr/include/gz/math7/gz/math/Helpers.hh:
 
-/usr/include/mavsdk/deprecated.h:
+/usr/include/gz/math7/gz/math/Inertial.hh:
 
-/usr/include/mavsdk/handle.h:
+/usr/include/gz/math7/gz/math/Material.hh:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_serial_control.h:
+/usr/include/gz/math7/gz/math/MaterialType.hh:
 
-/usr/include/mavsdk/mavlink/common/common.h:
+/usr/include/gz/msgs10/gz/msgs/details/odometry.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink.h:
+/usr/include/gz/math7/gz/math/Matrix6.hh:
 
-/usr/include/boost/mpl/iter_fold_if.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_adsb_vehicle.h:
+/usr/include/gz/msgs10/gz/msgs/camera_cmd.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_attitude.h:
-
-/usr/include/eigen3/Eigen/src/Core/SolveTriangular.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_global_position_int.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_auth_key.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_input.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_autopilot_state_for_gimbal_device.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_battery_info.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_battery_status.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_button_change.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_image_captured.h:
-
-/usr/include/boost/mpl/vector/aux_/push_back.hpp:
-
-/usr/include/boost/mpl/next.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_tracking_geo_status.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_tracking_image_status.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_message_pack.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_cellular_status.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_change_operator_control.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_actuator_control_target.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_command_cancel.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_component_information.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_component_metadata.h:
-
-/usr/include/gz/msgs10/gz/msgs/details/time.pb.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_data_stream.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_data_transmission_handshake.h:
-
-/usr/include/google/protobuf/stubs/once.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_debug.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_distance_sensor.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_efi_status.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_esc_status.h:
-
-/usr/include/boost/config/detail/posix_features.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_estimator_status.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_event.h:
-
-/usr/include/c++/13/tr1/poly_laguerre.tcc:
-
-/usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
-
-/usr/include/boost/preprocessor/tuple/elem.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_extended_sys_state.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_fence_status.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_state_quaternion.h:
-
-/usr/include/gz/msgs10/gz/msgs/discovery.pb.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_generator_status.h:
-
-/usr/include/pcl-1.14/pcl/octree/octree_container.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_device_information.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_information.h:
-
-/usr/include/sched.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_set_manual_control.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_set_pitchyaw.h:
-
-/usr/include/c++/13/bits/stl_set.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gimbal_manager_status.h:
-
-/usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_global_position_int_cov.h:
-
-/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_inject_data.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_raw_int.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_rtcm_data.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps_rtk.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_controls.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_gps.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_hil_optical_flow.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_home_position.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_landing_target.h:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/mavsdk/mavlink/common/mavlink_msg_local_position_ned.h:
+/usr/include/gz/msgs10/gz/msgs/details/dvl_beam_state.pb.h:
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_pressure.h:
 
-/usr/include/c++/13/ext/aligned_buffer.h:
+/usr/include/gz/math7/gz/math/Pose3.hh:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_local_position_ned_cov.h:
+/usr/include/gz/math7/gz/math/SphericalCoordinates.hh:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_log_erase.h:
+/usr/include/mavsdk/mavlink/common/mavlink_msg_safety_set_allowed_area.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_log_request_list.h:
+/usr/include/pcl-1.14/pcl/PCLPointField.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_logging_ack.h:
+/usr/include/gz/math7/gz/math/Vector3.hh:
 
-/usr/include/boost/mpl/always.hpp:
+/usr/include/gz/msgs10/gz/msgs/InstallationDirectories.hh:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_logging_data_acked.h:
+/usr/include/gz/msgs10/gz/msgs/MessageTypes.hh:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_manual_setpoint.h:
+/usr/include/c++/13/bits/char_traits.h:
 
-/usr/include/boost/preprocessor/identity.hpp:
+/usr/include/gz/msgs10/gz/msgs/PointCloudPackedUtils.hh:
 
-/usr/include/eigen3/Eigen/StdVector:
+/usr/include/c++/13/compare:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_item.h:
+/usr/include/x86_64-linux-gnu/asm/errno.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_item_int.h:
+/usr/include/gz/msgs10/gz/msgs/Utility.hh:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_request_list.h:
+/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mission_request_partial_list.h:
+/usr/include/gz/msgs10/gz/msgs/actor.pb.h:
 
-/usr/include/c++/13/bits/requires_hosted.h:
+/usr/include/gz/msgs10/gz/msgs/annotated_axis_aligned_2d_box.pb.h:
 
-/usr/include/gz/utils2/gz/utils/ImplPtr.hh:
+/usr/include/gz/msgs10/gz/msgs/annotated_axis_aligned_2d_box_v.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_mount_orientation.h:
+/usr/include/boost/preprocessor/logical/and.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_nav_controller_output.h:
+/usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_obstacle_distance.h:
+/usr/include/gz/msgs10/gz/msgs/annotated_oriented_3d_box_v.pb.h:
 
-/usr/include/boost/mpl/vector/aux_/pop_front.hpp:
+/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_odometry.h:
+/usr/include/gz/msgs10/gz/msgs/atmosphere.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_gps2_raw.h:
+/usr/include/gz/msgs10/gz/msgs/battery.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_operator_id.h:
+/usr/include/gz/msgs10/gz/msgs/boxgeom.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_open_drone_id_system_update.h:
+/usr/include/gz/msgs10/gz/msgs/bytes.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_optical_flow_rad.h:
+/usr/include/gz/msgs10/gz/msgs/camera_lens.pb.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
+/usr/include/gz/msgs10/gz/msgs/cameratrack.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/capsulegeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/gui_camera.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_resource_request.h:
+
+/usr/include/c++/13/debug/assertions.h:
+
+/usr/include/boost/mpl/placeholders.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/cmd_vel2d.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/capsulegeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/color.pb.h:
+
+/usr/include/c++/13/cstdint:
+
+/usr/include/gz/msgs10/gz/msgs/contacts.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/contactsensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/convert/AxisAlignedBox.hh:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_camera_thermal_range.h:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/usr/include/gz/msgs10/gz/msgs/convert/GeometryType.hh:
+
+/usr/include/gz/msgs10/gz/msgs/convert/Pose.hh:
+
+/usr/include/gz/msgs10/gz/msgs/convert/SphericalCoordinates.hh:
+
+/usr/include/boost/mpl/vector/aux_/item.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/convert/StdTypes.hh:
+
+/usr/include/gz/msgs10/gz/msgs/convert/Vector2.hh:
+
+/usr/include/boost/mpl/aux_/arity_spec.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/convert/Vector3.hh:
+
+/usr/include/gz/msgs10/gz/msgs/cylindergeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/density.pb.h:
+
+/usr/include/boost/preprocessor/logical/compl.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/detail/PointCloudPackedUtils.hh:
+
+/usr/include/gz/msgs10/gz/msgs/details/sim_event.pb.h:
+
+/usr/include/c++/13/bits/string_view.tcc:
+
+/usr/include/gz/msgs10/gz/msgs/details/air_pressure_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/uint64.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/altimeter.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/altimeter_sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/annotated_axis_aligned_2d_box.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/packet.pb.h:
+
+/usr/include/unistd.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/annotated_axis_aligned_2d_box_v.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_terrain_report.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/annotated_oriented_3d_box.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/annotated_oriented_3d_box_v.pb.h:
+
+/usr/include/eigen3/Eigen/Geometry:
+
+/usr/include/gz/msgs10/gz/msgs/details/axis.pb.h:
+
+/usr/include/google/protobuf/generated_message_util.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/axis_aligned_2d_box.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/axis_aligned_box.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/bytes.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/camera_info.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/camera_lens.pb.h:
+
+/usr/include/boost/mpl/integral_c_fwd.hpp:
+
+/usr/include/gz/msgs10/gz/msgs/header.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/collision.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/log_playback_control.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/conegeom.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/cylindergeom.pb.h:
 
 /usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_ack.h:
 
-/usr/include/c++/13/bits/concept_check.h:
+/usr/include/gz/msgs10/gz/msgs/details/dataframe.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_request_list.h:
+/usr/include/c++/13/bits/ptr_traits.h:
 
-/usr/include/mavsdk/plugins/telemetry/telemetry.h:
+/usr/include/gz/msgs10/gz/msgs/details/diagnostics.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_log_request_end.h:
+/usr/include/gz/msgs10/gz/msgs/details/double.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_param_ext_set.h:
+/usr/include/gz/msgs10/gz/msgs/details/double_v.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_param_request_read.h:
+/usr/include/gz/msgs10/gz/msgs/details/entity_factory.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_att_pos_mocap.h:
+/usr/include/gz/msgs10/gz/msgs/details/entity_wrench.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_fuel_status.h:
+/usr/include/gz/msgs10/gz/msgs/details/fluid.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_param_set.h:
+/usr/include/c++/13/ios:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_play_tune_v2.h:
+/usr/include/gz/msgs10/gz/msgs/details/fog.pb.h:
 
-/usr/include/c++/13/tr1/modified_bessel_func.tcc:
+/usr/include/gz/msgs10/gz/msgs/details/friction.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_position_target_local_ned.h:
+/usr/include/gz/msgs10/gz/msgs/details/gps_sensor.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_raw_pressure.h:
+/usr/include/gz/msgs10/gz/msgs/sonar.pb.h:
 
-/usr/include/c++/13/bits/stl_map.h:
+/usr/include/alloca.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_control_system_state.h:
+/usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_rc_channels_override.h:
+/usr/include/gz/msgs10/gz/msgs/details/inertial.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_rc_channels_scaled.h:
+/usr/include/gz/msgs10/gz/msgs/details/param.pb.h:
 
-/usr/include/pcl-1.14/pcl/octree/octree_search.h:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_request_event.h:
+/usr/include/gz/msgs10/gz/msgs/details/gui.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_response_event_error.h:
+/usr/include/gz/msgs10/gz/msgs/details/heightmapgeom.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_highres_imu.h:
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_imu.h:
+/usr/include/gz/msgs10/gz/msgs/details/hydra.pb.h:
 
-/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
+/usr/include/gz/msgs10/gz/msgs/details/physics.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_imu3.h:
+/usr/include/gz/msgs10/gz/msgs/details/image.pb.h:
 
-/usr/include/boost/mpl/aux_/config/ttp.hpp:
+/usr/include/gz/msgs10/gz/msgs/joy.pb.h:
 
-/usr/include/gz/transport13/gz/transport/Uuid.hh:
+/usr/include/gz/utils2/gz/utils/detail/ImplPtr.hh:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_pressure2.h:
+/usr/include/gz/msgs10/gz/msgs/details/imu.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_scaled_pressure3.h:
+/usr/include/gz/msgs10/gz/msgs/details/imu_sensor.pb.h:
 
-/usr/include/eigen3/Eigen/src/Core/Ref.h:
+/usr/include/gz/msgs10/gz/msgs/details/int32.pb.h:
 
-/usr/include/mavsdk/mavlink/common/mavlink_msg_servo_output_raw.h:
+/usr/include/gz/msgs10/gz/msgs/details/sensor.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/int32_v.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/int64_v.pb.h:
+
+/usr/include/mavsdk/mavlink/common/mavlink_msg_esc_status.h:
+
+/usr/include/gz/msgs10/gz/msgs/cessna.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/joint_trajectory.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/joint_wrench.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/joy.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/laserscan.pb.h:
+
+/usr/include/gz/msgs10/gz/msgs/details/lens.pb.h:

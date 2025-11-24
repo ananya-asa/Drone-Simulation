@@ -1,13 +1,12 @@
 #ifndef LIDAR_BRIDGE_H
 #define LIDAR_BRIDGE_H
 
-#include <memory>
-#include <mutex>
-#include <atomic>
-#include <gz/transport/Node.hh>
-#include <gz/msgs/pointcloud_packed.pb.h>
+#include <gz/transport.hh>
+#include <gz/msgs.hh>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
+#include <mutex>
+#include <atomic>
 
 class LIDARBridge {
 public:
@@ -15,19 +14,18 @@ public:
     ~LIDARBridge();
 
     bool subscribe();
-    pcl::PointCloud<pcl::PointXYZ>::Ptr get_cloud();
-    bool has_new_data();
+    bool has_new_data() const;
     void reset_data_flag();
-    int get_callback_count() const { return callback_count_; }
+    pcl::PointCloud<pcl::PointXYZ>::Ptr get_cloud();
 
 private:
-    void lidar_callback(const gz::msgs::PointCloudPacked& msg);
+    void lidar_callback(const gz::msgs::LaserScan& msg);
 
-    gz::transport::Node gz_node_;
+    gz::transport::Node node_;
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_;
     std::mutex cloud_mutex_;
-    std::atomic<bool> new_data_available_;
-    int callback_count_;
+    std::atomic<bool> new_data_flag_;
+    std::atomic<int> callback_count_;
 };
 
 #endif // LIDAR_BRIDGE_H

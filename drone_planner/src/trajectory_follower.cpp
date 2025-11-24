@@ -19,16 +19,14 @@ void TrajectoryFollower::start() {
     std::cout << "TrajectoryFollower: Starting to follow " << path_grid_.size() << " waypoints" << std::endl;
 
     for (size_t i = 0; i < path_grid_.size(); ++i) {
-        // Convert grid coordinates to world coordinates (NED frame)
         float north_m = path_grid_[i].x() * resolution_;
         float east_m = path_grid_[i].y() * resolution_;
-        float down_m = -2.5f; // Fixed altitude (up from ground)
+        float down_m = -2.5f;
 
         std::cout << "\nWaypoint " << i+1 << "/" << path_grid_.size() 
                   << ": Grid(" << path_grid_[i].x() << "," << path_grid_[i].y() << "," << path_grid_[i].z() << ")"
                   << " -> NED(" << north_m << "," << east_m << "," << down_m << ")" << std::endl;
 
-        // Send setpoint to drone
         Offboard::PositionNedYaw setpoint{};
         setpoint.north_m = north_m;
         setpoint.east_m = east_m;
@@ -36,15 +34,14 @@ void TrajectoryFollower::start() {
         setpoint.yaw_deg = 0.0f;
         
         offboard_->set_position_ned(setpoint);
-        sleep_for(milliseconds(200)); // Give controller time to process
+        sleep_for(milliseconds(200));
 
-        // Wait for drone to reach waypoint with STRICTER criteria
         bool reached = false;
         int timeout_count = 0;
-        const int max_timeout = 100; // 10 seconds (was 5 seconds)
-        const float distance_threshold = 0.15f; // Stricter threshold (was 0.3m)
+        const int max_timeout = 100;
+        const float distance_threshold = 0.15f;
 
-        std::cout << "  Waiting to reach waypoint..." << std::flush;
+        std::cout << "  Waiting to reach waypoint...";
 
         while (!reached && timeout_count < max_timeout) {
             Telemetry::PositionNed current_pos = telemetry_->position_velocity_ned().position;
@@ -64,7 +61,7 @@ void TrajectoryFollower::start() {
             timeout_count++;
             
             if (timeout_count % 10 == 0) {
-                std::cout << "."; // Progress indicator
+                std::cout << ".";
             }
         }
 
@@ -72,7 +69,6 @@ void TrajectoryFollower::start() {
             std::cout << " ✗ TIMEOUT (moved on after " << timeout_count << " iterations)" << std::endl;
         }
 
-        // Hover briefly at this waypoint before moving to next
         sleep_for(milliseconds(500));
     }
 

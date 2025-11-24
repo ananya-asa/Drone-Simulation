@@ -1,21 +1,24 @@
-#pragma once
+#ifndef WORLD_MODEL_H
+#define WORLD_MODEL_H
 
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/octree/octree_search.h>
-
 #include <Eigen/Dense>
+#include <memory>
 
 class WorldModel {
 public:
     WorldModel(double resolution);
-    ~WorldModel();
-
+    
     void buildMap(const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud);
-
-    bool isCollision(const Eigen::Vector3i& grid_pos) const;
+    bool isCollisionFree(const Eigen::Vector3f& point) const;
+    
+    double getResolution() const { return resolution_; }
 
 private:
-    pcl::octree::OctreePointCloudSearch<pcl::PointXYZ>* octree;
-    double _resolution;
+    std::shared_ptr<pcl::octree::OctreePointCloudSearch<pcl::PointXYZ>> octree;
+    double resolution_;
 };
+
+#endif // WORLD_MODEL_H
