@@ -179,7 +179,19 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/unique_lock.h \
  /usr/include/c++/13/condition_variable \
  /usr/include/c++/13/bits/atomic_futex.h /usr/include/c++/13/atomic \
- /usr/include/c++/13/bits/std_function.h /usr/include/mavsdk/mavsdk.h \
+ /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/fstream \
+ /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/iomanip \
+ /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h \
+ /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/mavsdk/mavsdk.h \
  /usr/include/c++/13/optional \
  /usr/include/c++/13/bits/enable_special_members.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
@@ -197,7 +209,6 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/mavsdk/deprecated.h /usr/include/mavsdk/handle.h \
  /usr/include/mavsdk/system.h /usr/include/mavsdk/autopilot.h \
- /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
  /usr/include/mavsdk/component_type.h /usr/include/mavsdk/vehicle.h \
  /usr/include/mavsdk/mavlink_include.h \
  /usr/include/mavsdk/mavlink/common/mavlink.h \
@@ -1255,14 +1266,6 @@ CMakeFiles/uav_planner.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
- /usr/include/c++/13/iomanip /usr/include/c++/13/locale \
- /usr/include/c++/13/bits/locale_facets_nonio.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/13/bits/codecvt.h \
- /usr/include/c++/13/bits/locale_facets_nonio.tcc \
- /usr/include/c++/13/bits/locale_conv.h \
- /usr/include/c++/13/bits/quoted_string.h \
  /usr/include/gz/transport13/gz/transport/NetUtils.hh \
  /usr/include/gz/transport13/gz/transport/Publisher.hh \
  /usr/include/gz/transport13/gz/transport/TopicStorage.hh \

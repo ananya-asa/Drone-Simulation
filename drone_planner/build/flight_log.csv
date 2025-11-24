@@ -1,0 +1,2 @@
+Timestamp,Cycle,North_m,East_m,Down_m,GridX,GridY,GridZ,GoalGridX,GoalGridY,GoalGridZ,DistanceToGoal_m,PathLength,LidarPoints,PlanningStatus,WaypointsFlown
+2025-11-24 14:47:22,1,-0.00433104,0.0366744,-1.85918,0,0,0,10,0,0,0,11,4816,SUCCESS,3
