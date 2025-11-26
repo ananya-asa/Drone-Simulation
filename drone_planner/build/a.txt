@@ -1,0 +1,218 @@
+Script started on 2025-11-26 15:14:14+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="116" LINES="22"]
+[?2004h]0;asa624@hp: /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[01;32masa624@hp[00m:[01;34m/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[00m$ make
+[?2004l[ 16%] [32mBuilding CXX object CMakeFiles/uav_planner.dir/src/path_planner.cpp.o[0m
+[ 33%] [32m[1mLinking CXX executable uav_planner[0m
+[100%] Built target uav_planner
+[?2004h]0;asa624@hp: /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[01;32masa624@hp[00m:[01;34m/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[00m$ make./uav_planner
+[?2004l
+=== Autonomous Drone Planner V5.2 (LOGGING + INTERACTIVE) ===
+WorldModel created with 0.2m resolution.
+[LOG] Flight data will be saved to: flight_log.csv
+[34m[03:14:47|Info ] [0mMAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+Waiting to discover drone...
+[34m[03:14:47|Info ] [0mNew system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+[32m[03:14:47|Debug] [0mNew system ID: 1 Comp ID: 1 (mavsdk_impl.cpp:1020)
+[32m[03:14:47|Debug] [0mComponent Autopilot (1) added. (system_impl.cpp:487)
+[33m[03:14:48|Warn ] [0mVehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+[32m[03:14:48|Debug] [0mDiscovered 1 component(s) (system_impl.cpp:607)
+Discovered autopilot!
+
+[INPUT] Enter goal position in NED coordinates:
+  North (meters): [32m[03:14:48|Debug] [0mNew system ID: 255 Comp ID: 230 (mavsdk_impl.cpp:1020)
+[32m[03:14:48|Debug] [0mComponent Unsupported component (230) added. (system_impl.cpp:487)
+[32m[03:14:48|Debug] [0mDiscovered 1 component(s) (system_impl.cpp:607)
+10
+  East (meters): 5
+  Down (meters, put -2.5 for 2.5m up): -3
+[DEBUG] Goal NED: 10  5 -3
+[DEBUG] Goal Grid: 50 25 15 (should have positive z for altitude!)
+
+[SETUP] Initializing LIDAR sensor bridge...
+[LIDAR_BRIDGE] Successfully subscribed to /lidar topic
+[LIDAR] Data received! Building map with 6188 points
+[LIDAR] Data received! Building map with 6185 points
+
+[SETUP] Waiting for drone to be ready...
+
+[FLIGHT] Arming drone...
+[32m[FLIGHT] Taking off...
+[03:14:56|Debug] [0mMAVLink: info: Armed by external command	 (system_impl.cpp:349)
+[32m[03:14:56|Debug] [0mMAVLink: info: Using default takeoff altitude: 2.5 m	 (system_impl.cpp:349)
+[LIDAR] Data received! Building map with 6185 points
+[LIDAR] Data received! Building map with 6185 points
+[32m[03:14:58|Debug] [0mMAVLink: info: Takeoff detected	 (system_impl.cpp:349)
+[LIDAR] Data received! Building map with 6185 points
+[LIDAR] Data received! Building map with 6188 points
+[LIDAR] Data received! Building map with 6185 points
+[FLIGHT] Starting Offboard mode...
+[33m[03:15:00|Warn ] [0mReceived ack for not-existing command: 176! Ignoring... (mavlink_command_sender.cpp:304)
+[LIDAR] Data received! Building map with 6195 points
+[LIDAR] Data received! Building map with 5627 points
+
+[MISSION] Starting dynamic replanning mission...
+Building map with 5946 points...
+[OCTREE] Bounding box: [-94.8409, 98.4393] x [-87.5247, 73.9059] x [-0.5, 0.5]
+[DEBUG] Start NED: 0.0381134 0.0735649  -1.94569
+[DEBUG] Start Grid:  0  0 10
+
+[PLANNER] Starting A* from  0  0 10 to 50 25 15
+[LIDAR] Data received! Building map with 5896 points
+[LIDAR] Data received! Building map with 5813 points
+[PLANNER] ✓ Path found in 23394 iterations! (11400 nodes expanded)
+[PLANNER] Path length: 51 waypoints
+[PLAN] ✓ Path found: 51 waypoints
+[ACT] Flying next 3 waypoints...
+TrajectoryFollower: Starting to follow 3 waypoints
+
+Waypoint 1/3: Grid(0,0,10) -> NED(0,0,0.5)
+[LIDAR] Data received! Building map with 5579 points
+ Waiting to reach waypoint...[LIDAR] Data received! Building map with 5770 points
+.[LIDAR] Data received! Building map with 6032 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6044 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6044 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6044 points
+. ⚠ TIMEOUT (moved on after 150 iterations - may indicate obstacle)
+[LIDAR] Data received! Building map with 6041 points
+
+Waypoint 2/3: Grid(1,0,10) -> NED(0.2,0,0.5)
+ Waiting to reach waypoint...[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6044 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6044 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6044 points
+[LIDAR] Data received! Building map with 6041 points
+. ⚠ TIMEOUT (moved on after 150 iterations - may indicate obstacle)
+
+Waypoint 3/3: Grid(2,0,10) -> NED(0.4,0,0.5)
+ Waiting to reach waypoint...[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6044 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6044 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+.[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6044 points
+.[LIDAR] Data received! Building map with 6041 points
+. ⚠ TIMEOUT (moved on after 150 iterations - may indicate obstacle)
+[LIDAR] Data received! Building map with 6041 points
+
+TrajectoryFollower: Path execution complete!
+[STATUS] Distance to goal: 0m
+
+[GOAL REACHED]
+
+
+[FLIGHT] Mission complete. Landing...
+[33m[03:15:51|Warn ] [0mReceived ack for not-existing command: 176! Ignoring... (mavlink_command_sender.cpp:304)
+[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+[32m[03:15:53|Debug] [0mMAVLink: info: Landing at current position	 (system_impl.cpp:349)
+[LIDAR] Data received! Building map with 6044 points
+[32m[03:15:54|Debug] [0mMAVLink: info: Landing detected	 (system_impl.cpp:349)
+[LIDAR] Data received! Building map with 6041 points
+
+--- MISSION COMPLETE ---
+
+[LIDAR_BRIDGE] Shutting down. Total callbacks: 622
+[LOG] Flight data saved successfully.
+[?2004h]0;asa624@hp: /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[01;32masa624@hp[00m:[01;34m/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[00m$ ./uav_planner
+[?2004l
+=== Autonomous Drone Planner V5.2 (LOGGING + INTERACTIVE) ===
+WorldModel created with 0.2m resolution.
+[LOG] Flight data will be saved to: flight_log.csv
+[34m[03:17:29|Info ] [0mMAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+Waiting to discover drone...
+[34m[03:17:30|Info ] [0mNew system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+[32m[03:17:30|Debug] [0mNew system ID: 1 Comp ID: 1 (mavsdk_impl.cpp:1020)
+[32m[03:17:30|Debug] [0mComponent Autopilot (1) added. (system_impl.cpp:487)
+[32m[03:17:30|Debug] [0mNew system ID: 255 Comp ID: 230 (mavsdk_impl.cpp:1020)
+[32m[03:17:30|Debug] [0mComponent Unsupported component (230) added. (system_impl.cpp:487)
+[32m[03:17:30|Debug] [0mDiscovered 1 component(s) (system_impl.cpp:607)
+Discovered autopilot!
+
+[INPUT] Enter goal position in NED coordinates:
+  North (meters): [33m[03:17:30|Warn ] [0mVehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+[32m[03:17:30|Debug] [0mDiscovered 1 component(s) (system_impl.cpp:607)
+10
+  East (meters): 5
+  Down (meters, put -2.5 for 2.5m up): -3
+[DEBUG] Goal NED: 10  5 -3
+[DEBUG] Goal Grid: 50 25 15 (should have positive z for altitude!)
+
+[SETUP] Initializing LIDAR sensor bridge...
+[LIDAR_BRIDGE] Successfully subscribed to /lidar topic
+[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6042 points
+
+[SETUP] Waiting for drone to be ready...
+
+[FLIGHT] Arming drone...
+[FLIGHT] Taking off...
+[32m[03:17:38|Debug] [0mMAVLink: info: Armed by external command	 (system_impl.cpp:349)
+[LIDAR] Data received! Building map with 6041 points
+[32m[03:17:38|Debug] [0mMAVLink: info: [logger] ./log/2025-11-26/15_17_38.ulg	 (system_impl.cpp:349)
+[32m[03:17:38|Debug] [0mMAVLink: info: Using default takeoff altitude: 2.5 m	 (system_impl.cpp:349)
+[LIDAR] Data received! Building map with 6041 points
+[32m[03:17:39|Debug] [0mMAVLink: info: Takeoff detected	 (system_impl.cpp:349)
+[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 6042 points
+[FLIGHT] Starting Offboard mode...
+[33m[03:17:43|Warn ] [0mReceived ack for not-existing command: 176! Ignoring... (mavlink_command_sender.cpp:304)
+[LIDAR] Data received! Building map with 6041 points
+[LIDAR] Data received! Building map with 5930 points
+
+[MISSION] Starting dynamic replanning mission...
+Building map with 5697 points...
+[OCTREE] Bounding box: [-58.8632, 88.9012] x [-61.3503, 52.0635] x [-0.5, 0.5]
+[DEBUG] Start NED: -0.0288342 -0.0124977   -1.86688
+[DEBUG] Start Grid: 0 0 9
+
+[PLANNER] Starting A* from 0 0 9 to 50 25 15
+[LIDAR] Data received! Building map with 5716 points
+[LIDAR] Data received! Building map with 5641 points
+[LIDAR] Data received! Building map with 5548 points
+[PLANNER] ✓ Path found in 24980 iterations! (12225 nodes expanded)
+[PLANNER] Path length: 51 waypoints
+[PLAN] ✓ Path found: 51 waypoints
+[ACT] Flying next 3 waypoints...
+TrajectoryFollower: Starting to follow 3 waypoints
+
+Waypoint 1/3: Grid(0,0,9) -> NED(0,0,0.5)
+ Waiting to reach waypoint...[LIDAR] Data received! Building map with 5860 points
+[LIDAR] Data received! Building map with 6033 points
+.[LIDAR] Data received! Building map with 6033 points
+.[LIDAR] Data received! Building map with 6033 points
+.[LIDAR] Data received! Building map with 6034 points
+[LIDAR] Data received! Building map with 6033 points
+.[LIDAR] Data received! Building map with 6033 points
+.[LIDAR] Data received! Building map with 6033 points
+^C
+[?2004h]0;asa624@hp: /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[01;32masa624@hp[00m:[01;34m/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[00m$ [K]0;asa624@hp: /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[01;32masa624@hp[00m:[01;34m/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[00m$ [K]0;asa624@hp: /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[01;32masa624@hp[00m:[01;34m/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[00m$ [K]0;asa624@hp: /mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[01;32masa624@hp[00m:[01;34m/mnt/c/Users/anany/OneDrive/Drone/drone_planner/build[00m$ [?2004l
+exit
+
+Script done on 2025-11-26 15:21:13+00:00 [COMMAND_EXIT_CODE="130"]
