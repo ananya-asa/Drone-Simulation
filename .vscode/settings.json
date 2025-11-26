@@ -59,6 +59,9 @@
         "text_encoding": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "cstring": "cpp",
+        "unordered_set": "cpp",
+        "fstream": "cpp"
     }
 }
