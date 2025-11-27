@@ -1,42 +1,24 @@
-#ifndef PATH_PLANNER_H
-#define PATH_PLANNER_H
+#pragma once
 
 #include <vector>
-#include <queue>
-#include <unordered_map>
-#include <unordered_set>
-#include <cmath>
-#include <algorithm>
-#include <iostream>
 #include <Eigen/Dense>
-#include "world_model.h"
 
+// Forward declaration
+class WorldModel;
+
+// The Node struct MUST be defined here so everyone can see it
 struct Node {
-    Eigen::Vector3i position;
-    double g_cost;
-    double h_cost;
-    Eigen::Vector3i parent;
+    Eigen::Vector3i pos;
+    double g, h, f;
+    Node* parent;
 
-    double f_cost() const { return g_cost + h_cost; }
-
-    bool operator>(const Node& other) const {
-        return f_cost() > other.f_cost();
-    }
+    // Constructor
+    Node(Eigen::Vector3i p) : pos(p), g(0), h(0), f(0), parent(nullptr) {}
 };
 
-struct Vector3iHash {
-    std::size_t operator()(const Eigen::Vector3i& v) const {
-        std::size_t h1 = std::hash<int>()(v.x());
-        std::size_t h2 = std::hash<int>()(v.y());
-        std::size_t h3 = std::hash<int>()(v.z());
-        return h1 ^ (h2 << 1) ^ (h3 << 2);
-    }
-};
-
+// Main Function Declaration
 std::vector<Eigen::Vector3i> A_star_search(
     const Eigen::Vector3i& start,
     const Eigen::Vector3i& goal,
     const WorldModel& world
 );
-
-#endif // PATH_PLANNER_H

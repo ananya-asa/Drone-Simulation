@@ -1,84 +1,92 @@
 #include "world_model.h"
-#include <pcl/octree/octree_search.h>
+#include <iostream>
 #include <cmath>
-#include <cfloat>  // FIX: Add this for FLT_MAX
+#include <cfloat> // For FLT_MAX
+#include <vector>
 
 WorldModel::WorldModel(double resolution) : resolution_(resolution) {
-    octree = std::make_shared<pcl::octree::OctreePointCloudSearch<pcl::PointXYZ>>(resolution);
-    std::cout << "WorldModel created with " << resolution << "m resolution." << std::endl;
+    octree = std::make_shared<pcl::octree::OctreePointCloudSearch<pcl::PointXYZ>>(resolution_);
+    std::cout << "WorldModel created with " << resolution_ << "m resolution." << std::endl;
+}
+
+WorldModel::~WorldModel() {
+    // Shared pointer handles deletion automatically
 }
 
 void WorldModel::buildMap(const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud) {
-    std::cout << "Building map with " << cloud->points.size() << " points..." << std::endl;
+    // FIX 1: Don't print every frame to keep logs clean
+    // std::cout << "Building map with " << cloud->points.size() << " points..." << std::endl;
     
-    // FIX 1: CLEAR OLD OCTREE BEFORE REBUILDING
-    octree.reset();
-    octree = std::make_shared<pcl::octree::OctreePointCloudSearch<pcl::PointXYZ>>(0.2);
+    // FIX 2: Clear old octree
+    octree->deleteTree(); 
+    // We don't need to re-allocate the pointer, just clear the tree structure
     
-    // FIX 2: DYNAMIC BOUNDING BOX - Auto-compute from cloud, not hardcoded
+    // FIX 3: Dynamic Bounding Box
     float min_x = FLT_MAX, min_y = FLT_MAX, min_z = FLT_MAX;
     float max_x = -FLT_MAX, max_y = -FLT_MAX, max_z = -FLT_MAX;
     
-    for (const auto& pt : cloud->points) {
-        min_x = std::min(min_x, pt.x);
-        min_y = std::min(min_y, pt.y);
-        min_z = std::min(min_z, pt.z);
-        max_x = std::max(max_x, pt.x);
-        max_y = std::max(max_y, pt.y);
-        max_z = std::max(max_z, pt.z);
+    if (cloud->points.empty()) {
+        // Safety fallback if cloud is empty
+        min_x = -10; min_y = -10; min_z = -5;
+        max_x = 10; max_y = 10; max_z = 5;
+    } else {
+        for (const auto& pt : cloud->points) {
+            if (pt.x < min_x) min_x = pt.x;
+            if (pt.y < min_y) min_y = pt.y;
+            if (pt.z < min_z) min_z = pt.z;
+            if (pt.x > max_x) max_x = pt.x;
+            if (pt.y > max_y) max_y = pt.y;
+            if (pt.z > max_z) max_z = pt.z;
+        }
+        // Add safety margins (2 meters buffer)
+        float margin = 2.0f;
+        min_x -= margin; min_y -= margin; min_z -= margin;
+        max_x += margin; max_y += margin; max_z += margin;
     }
-    
-    // Add safety margins
-    float margin = 0.5f;
-    min_x -= margin; min_y -= margin; min_z -= margin;
-    max_x += margin; max_y += margin; max_z += margin;
-    
-    std::cout << "[OCTREE] Bounding box: [" << min_x << ", " << max_x << "] x ["
-              << min_y << ", " << max_y << "] x [" << min_z << ", " << max_z << "]" << std::endl;
     
     octree->defineBoundingBox(min_x, min_y, min_z, max_x, max_y, max_z);
     octree->setInputCloud(cloud);
     octree->addPointsFromInputCloud();
 }
 
-// FIX 3: IMPROVED COLLISION DETECTION WITH SAFETY MARGIN
-bool WorldModel::isCollisionFree(const Eigen::Vector3f& point) const {
-    pcl::PointXYZ search_point(point.x(), point.y(), point.z());
+bool WorldModel::isCollision(const Eigen::Vector3i& grid_pos) const {
+    // Convert grid to world coordinate
+    pcl::PointXYZ search_point(
+        grid_pos.x() * resolution_, 
+        grid_pos.y() * resolution_, 
+        grid_pos.z() * resolution_
+    );
     
-    // SAFETY MARGIN: Drone radius is ~0.33m, we check 0.4m buffer
-    const float SAFETY_MARGIN = 0.7f;
+    // SAFETY MARGIN: Drone radius + Error margin
+    // 0.8m is a good "Paranoid" safety distance
+    const float SAFETY_MARGIN = 0.8f; 
     const float SAFETY_RADIUS_SQ = SAFETY_MARGIN * SAFETY_MARGIN;
     
     std::vector<int> indices;
     std::vector<float> distances;
     
-    // FIX 4: Check MULTIPLE nearby points, not just 1
-    int k_neighbors = 5;  // Check 5 nearest neighbors instead of 1
+    // Check 1 nearest neighbor. If the CLOSEST point is far away, we are safe.
+    int k_neighbors = 1; 
     int result = octree->nearestKSearch(search_point, k_neighbors, indices, distances);
     
     if (result == 0) {
-        // No points found near this location - it's DEFINITELY free
-        return true;
+        return false; // No points found, SAFE (No Collision)
     }
     
-    // Check if any neighbor is within safety radius
-    for (float dist : distances) {
-        if (dist < SAFETY_RADIUS_SQ) {
-            // Too close to an obstacle
-            return false;
-        }
+    // If the closest point is closer than our safety margin, it's a collision
+    if (distances[0] < SAFETY_RADIUS_SQ) {
+        return true; // COLLISION!
     }
     
-    // All neighbors are far enough away - path is clear
-    return true;
+    return false; // Safe
 }
 
-// COORDINATE CONVERSION: NED (North-East-Down) <-> Grid
+// Helper functions
 Eigen::Vector3i WorldModel::worldToGrid(const Eigen::Vector3d& ned_pos) const {
     return Eigen::Vector3i(
-        std::round(ned_pos.x() / resolution_),   // North -> X
-        std::round(ned_pos.y() / resolution_),   // East  -> Y
-        std::round(-ned_pos.z() / resolution_)   // Down (negate for altitude)
+        std::round(ned_pos.x() / resolution_), 
+        std::round(ned_pos.y() / resolution_), 
+        std::round(ned_pos.z() / resolution_) 
     );
 }
 
@@ -86,6 +94,6 @@ Eigen::Vector3d WorldModel::gridToWorld(const Eigen::Vector3i& grid_pos) const {
     return Eigen::Vector3d(
         grid_pos.x() * resolution_,
         grid_pos.y() * resolution_,
-        -grid_pos.z() * resolution_
+        grid_pos.z() * resolution_
     );
 }
