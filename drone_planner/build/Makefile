@@ -129,6 +129,30 @@ uav_planner/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uav_planner.dir/build.make CMakeFiles/uav_planner.dir/build
 .PHONY : uav_planner/fast
 
+src/kalman_filter.o: src/kalman_filter.cpp.o
+.PHONY : src/kalman_filter.o
+
+# target to build an object file
+src/kalman_filter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/uav_planner.dir/build.make CMakeFiles/uav_planner.dir/src/kalman_filter.cpp.o
+.PHONY : src/kalman_filter.cpp.o
+
+src/kalman_filter.i: src/kalman_filter.cpp.i
+.PHONY : src/kalman_filter.i
+
+# target to preprocess a source file
+src/kalman_filter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/uav_planner.dir/build.make CMakeFiles/uav_planner.dir/src/kalman_filter.cpp.i
+.PHONY : src/kalman_filter.cpp.i
+
+src/kalman_filter.s: src/kalman_filter.cpp.s
+.PHONY : src/kalman_filter.s
+
+# target to generate assembly for a file
+src/kalman_filter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/uav_planner.dir/build.make CMakeFiles/uav_planner.dir/src/kalman_filter.cpp.s
+.PHONY : src/kalman_filter.cpp.s
+
 src/lidar_bridge.o: src/lidar_bridge.cpp.o
 .PHONY : src/lidar_bridge.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... uav_planner"
+	@echo "... src/kalman_filter.o"
+	@echo "... src/kalman_filter.i"
+	@echo "... src/kalman_filter.s"
 	@echo "... src/lidar_bridge.o"
 	@echo "... src/lidar_bridge.i"
 	@echo "... src/lidar_bridge.s"

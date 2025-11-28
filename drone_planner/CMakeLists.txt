@@ -18,6 +18,7 @@ add_executable(uav_planner
     src/world_model.cpp 
     src/trajectory_follower.cpp
     src/lidar_bridge.cpp
+    src/kalman_filter.cpp
 )
 
 target_link_libraries(uav_planner PRIVATE 
