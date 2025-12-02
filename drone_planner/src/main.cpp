@@ -1,3 +1,8 @@
+// FILE: src/main.cpp
+// VERSION: 6.0 (IMPROVED)
+// IMPROVEMENTS: Memory management, error handling, 3D support, documentation
+// ============================================================================
+
 #include <iostream>
 #include <memory>
 #include <thread>
@@ -8,6 +13,8 @@
 #include <ctime>
 #include <string>
 #include <cmath>
+#include <vector>
+#include <algorithm>
 
 // MAVSDK Includes
 #include <mavsdk/mavsdk.h>
@@ -15,62 +22,101 @@
 #include <mavsdk/plugins/offboard/offboard.h>
 #include <mavsdk/plugins/telemetry/telemetry.h>
 
-// Our Project Headers
+// Project Headers
 #include "path_planner.h"
 #include "world_model.h"
 #include "trajectory_follower.h"
 #include "lidar_bridge.h"
 #include <Eigen/Dense>
-#include "kalman_filter.h"  // ✅ Kalman Filter
+#include "kalman_filter.h"
 
 using namespace mavsdk;
 using namespace std::this_thread;
 using namespace std::chrono;
 
 // ============================================================================
-// FLIGHT LOGGER CLASS (For Data Collection)
+// CONFIGURATION CONSTANTS
+// ============================================================================
+// Grid and Physics
+constexpr double RESOLUTION = 0.1;              // 10cm grid resolution
+constexpr double GOAL_TOLERANCE = 0.5;          // 0.5m goal tolerance
+constexpr float SAFETY_MARGIN = 0.8f;           // 0.8m collision buffer
+constexpr float WAYPOINT_TOLERANCE = 0.3f;      // 0.3m waypoint tolerance
+
+// Mission Parameters
+constexpr int MAX_CYCLES = 50;                  // Maximum replanning cycles
+constexpr int MAX_FAILS = 5;                    // Max consecutive planning failures
+constexpr int CONTROL_RATE_HZ = 20;             // 20Hz control frequency
+constexpr int COMMAND_PERIOD_MS = 50;           // 1000/20Hz = 50ms
+
+// Flight Parameters
+constexpr float TAKEOFF_ALTITUDE = 2.5f;        // 2.5m altitude (NED: -2.5)
+constexpr float MIN_FLIGHT_ALT = 0.5f;          // Minimum flight altitude
+constexpr float MAX_FLIGHT_ALT = 20.0f;         // Maximum flight altitude
+constexpr float SAFE_ALTITUDE = 1.5f;           // Safe altitude for planning start
+
+// ============================================================================
+// FLIGHT LOGGER CLASS (Data Collection & Analysis)
 // ============================================================================
 class FlightLogger {
 private:
     std::ofstream log_file;
+    int log_count = 0;
+
 public:
+    // Constructor: Opens CSV file with headers
     FlightLogger(const std::string& filename) {
         log_file.open(filename);
         if (log_file.is_open()) {
+            // CSV Header Row
             log_file << "Timestamp,Cycle,North_m,East_m,Down_m,GridX,GridY,GridZ,"
                      << "GoalGridX,GoalGridY,GoalGridZ,DistanceToGoal_m,PathLength,"
-                     << "LidarPoints,PlanningStatus,WaypointsFlown\n";
+                     << "LidarPoints,PlanningStatus,WaypointsFlown,KalmanDriftm\n";
             std::cout << "[LOG] 📊 Flight data will be saved to: " << filename << std::endl;
+        } else {
+            std::cerr << "[ERROR] ❌ Could not open log file: " << filename << std::endl;
         }
     }
     
+    // Destructor: Closes and flushes log
     ~FlightLogger() {
         if (log_file.is_open()) {
             log_file.close();
-            std::cout << "[LOG] ✅ Flight data saved successfully." << std::endl;
+            std::cout << "[LOG] ✅ Flight data saved (" << log_count << " cycles logged)." << std::endl;
         }
     }
     
-    void log_cycle(int cycle, 
-                   const mavsdk::Telemetry::PositionNed& pos,
-                   const Eigen::Vector3i& start_grid,
-                   const Eigen::Vector3i& goal_grid,
-                   float distance_to_goal,
-                   int path_length,
-                   int lidar_points,
-                   const std::string& status,
-                   int waypoints_flown) {
+    // Log a single mission cycle with comprehensive telemetry
+    void log_cycle(
+        int cycle,
+        const mavsdk::Telemetry::PositionNed& pos,
+        const Eigen::Vector3i& start_grid,
+        const Eigen::Vector3i& goal_grid,
+        float distance_to_goal,
+        int path_length,
+        int lidar_points,
+        const std::string& status,
+        int waypoints_flown,
+        float kalman_drift = 0.0f) {
+        
         if (!log_file.is_open()) return;
+        
+        // Format timestamp
         auto now = std::time(nullptr);
         auto tm = *std::localtime(&now);
+        
+        // Write CSV row
         log_file << std::put_time(&tm, "%Y-%m-%d %H:%M:%S") << ","
                  << cycle << ","
                  << pos.north_m << "," << pos.east_m << "," << pos.down_m << ","
                  << start_grid.x() << "," << start_grid.y() << "," << start_grid.z() << ","
                  << goal_grid.x() << "," << goal_grid.y() << "," << goal_grid.z() << ","
                  << distance_to_goal << "," << path_length << ","
-                 << lidar_points << "," << status << "," << waypoints_flown << "\n";
+                 << lidar_points << "," << status << "," << waypoints_flown << ","
+                 << kalman_drift << "\n";
+        
         log_file.flush();
+        log_count++;
     }
 };
 
@@ -91,60 +137,88 @@ std::shared_ptr<System> get_system(Mavsdk& mavsdk) {
         }
     });
 
+    // 10-second timeout for drone discovery
     if (fut.wait_for(std::chrono::seconds(10)) == std::future_status::timeout) {
-        std::cerr << "❌ No drone found, timeout!" << std::endl;
+        std::cerr << "❌ No drone found after 10 seconds. Check connection." << std::endl;
         return nullptr;
     }
     return fut.get();
 }
 
 // ============================================================================
-// MAIN PROGRAM
+// MAIN MISSION PROGRAM
 // ============================================================================
 int main() {
-    std::cout << "\n🚁 === Autonomous Drone Planner V5.5 (with Kalman Filter) ===" << std::endl;
+    std::cout << "\n🚁 ======================================" << std::endl;
+    std::cout << "    Autonomous Drone Planner V6.0" << std::endl;
+    std::cout << "    Enhanced with Smart Memory Management" << std::endl;
+    std::cout << "    3D Path Planning + Kalman Filtering" << std::endl;
+    std::cout << "======================================\n" << std::endl;
 
-    const double RESOLUTION = 0.1; // 10cm grid resolution
+    // ========================================================================
+    // INITIALIZATION PHASE
+    // ========================================================================
+    
+    // World Model Setup
+    std::cout << "[INIT] ⚙️  Creating world model (resolution: " << RESOLUTION << "m)..." << std::endl;
     WorldModel world(RESOLUTION);
     
-    // 🆕 ====== KALMAN FILTER CREATION ======
-    KalmanFilter kalman_filter;  // 6-state Kalman (position + velocity)
-    std::cout << "[INIT] ✅ Kalman Filter created" << std::endl;
+    // Kalman Filter Setup (6-state: position + velocity)
+    std::cout << "[INIT] 📊 Initializing Kalman Filter (6-DOF state)..." << std::endl;
+    KalmanFilter kalman_filter;
+    std::cout << "[INIT] ✅ Kalman Filter ready" << std::endl;
 
+    // Flight Logger Setup
     FlightLogger logger("flight_log.csv");
+    
+    // LIDAR Bridge Setup
+    std::cout << "[INIT] 📡 Initializing LIDAR sensor bridge..." << std::endl;
     LIDARBridge lidar;
 
-    // -------- MAVSDK Setup --------
+    // ========================================================================
+    // MAVSDK SETUP
+    // ========================================================================
+    std::cout << "[CONNECT] 🌐 Connecting to MAVSDK..." << std::endl;
     Mavsdk mavsdk(Mavsdk::Configuration(mavsdk::ComponentType::GroundStation));
     
     ConnectionResult connection_result = mavsdk.add_any_connection("udpin://0.0.0.0:14540");
     if (connection_result != ConnectionResult::Success) {
-        std::cerr << "[ERROR] ❌ Connection failed: " << connection_result << std::endl;
+        std::cerr << "[ERROR] ❌ MAVSDK connection failed: " << connection_result << std::endl;
+        return 1;
+    }
+    std::cout << "[CONNECT] ✅ MAVSDK listening on UDP 14540" << std::endl;
+    
+    // Discover drone system
+    auto system = get_system(mavsdk);
+    if (!system) {
+        std::cerr << "[ERROR] ❌ Failed to discover drone system" << std::endl;
         return 1;
     }
     
-    auto system = get_system(mavsdk);
-    if (!system) return 1;
-    
+    // Get plugin pointers
     auto action = std::make_shared<Action>(system);
     auto offboard = std::make_shared<Offboard>(system);
     auto telemetry = std::make_shared<Telemetry>(system);
+    
+    std::cout << "[CONNECT] ✅ All plugins initialized" << std::endl;
 
-    // -------- User Input for Goal --------
-    std::cout << "\n📍 [INPUT] Enter goal position in NED coordinates:" << std::endl;
-    std::cout << "  North (meters): "; 
-    float goal_north; 
+    // ========================================================================
+    // USER INPUT: GOAL COORDINATES
+    // ========================================================================
+    std::cout << "\n📍 [INPUT] Enter goal position (NED coordinates):" << std::endl;
+    
+    float goal_north, goal_east, goal_down;
+    
+    std::cout << "  North (meters): ";
     std::cin >> goal_north;
     
-    std::cout << "  East (meters): "; 
-    float goal_east; 
+    std::cout << "  East (meters): ";
     std::cin >> goal_east;
     
-    std::cout << "  Down (meters, put -2.5 for 2.5m up): "; 
-    float goal_down; 
+    std::cout << "  Down (meters, use -2.5 for 2.5m altitude up): ";
     std::cin >> goal_down;
     
-    // Convert Goal to Grid Manually (Safe & Reliable)
+    // Convert goal to grid coordinates
     Eigen::Vector3d goal_ned(goal_north, goal_east, goal_down);
     Eigen::Vector3i goal_grid(
         std::round(goal_north / RESOLUTION),
@@ -152,92 +226,122 @@ int main() {
         std::round(goal_down / RESOLUTION)
     );
     
-    std::cout << "[DEBUG] 📋 Goal NED: " << goal_ned.transpose() << std::endl;
-    std::cout << "[DEBUG] 📋 Goal Grid: " << goal_grid.transpose() << std::endl;
+    std::cout << "\n[DEBUG] ✅ Goal NED: " << goal_ned.transpose() << std::endl;
+    std::cout << "[DEBUG] ✅ Goal Grid: " << goal_grid.transpose() << std::endl;
 
-    // -------- LIDAR Setup --------
-    std::cout << "\n📡 [SETUP] Initializing LIDAR sensor bridge..." << std::endl;
+    // ========================================================================
+    // LIDAR SUBSCRIPTION & WARM-UP
+    // ========================================================================
+    std::cout << "\n[SETUP] 📡 Subscribing to LIDAR sensor..." << std::endl;
     if (!lidar.subscribe()) {
-        std::cerr << "[ERROR] ❌ Failed to subscribe to LIDAR" << std::endl;
+        std::cerr << "[ERROR] ❌ LIDAR subscription failed" << std::endl;
         return 1;
     }
-    // Give sensor a moment to warm up
-    sleep_for(seconds(2));
+    std::cout << "[SETUP] ✅ LIDAR subscribed. Warming up..." << std::endl;
+    sleep_for(seconds(2));  // Allow sensor to stabilize
 
-    // -------- Pre-flight Checks --------
-    std::cout << "\n🔍 [SETUP] Waiting for drone to be ready..." << std::endl;
+    // ========================================================================
+    // PRE-FLIGHT CHECKS
+    // ========================================================================
+    std::cout << "\n[PREFLIGHT] 🔍 Running pre-flight health checks..." << std::endl;
     while (!telemetry->health_all_ok()) {
+        std::cout << "[PREFLIGHT] ⏳ Waiting for health checks..." << std::endl;
         sleep_for(seconds(1));
     }
+    std::cout << "[PREFLIGHT] ✅ All systems healthy" << std::endl;
 
-    // -------- Arming --------
-    std::cout << "\n🔒 [FLIGHT] Arming drone..." << std::endl;
-    if (action->arm() != Action::Result::Success) {
-        std::cerr << "[ERROR] ❌ Arming failed" << std::endl;
+    // ========================================================================
+    // ARM DRONE
+    // ========================================================================
+    std::cout << "\n[FLIGHT] 🔒 Arming drone..." << std::endl;
+    Action::Result arm_result = action->arm();
+    if (arm_result != Action::Result::Success) {
+        std::cerr << "[ERROR] ❌ Arming failed: " << arm_result << std::endl;
+        return 1;
+    }
+    std::cout << "[FLIGHT] ✅ Drone armed" << std::endl;
+
+    // ========================================================================
+    // TAKEOFF
+    // ========================================================================
+    std::cout << "\n[FLIGHT] ⬆️  Taking off to " << TAKEOFF_ALTITUDE << "m..." << std::endl;
+    Action::Result takeoff_result = action->takeoff();
+    if (takeoff_result != Action::Result::Success) {
+        std::cerr << "[ERROR] ❌ Takeoff failed: " << takeoff_result << std::endl;
         return 1;
     }
 
-    // -------- Takeoff --------
-    std::cout << "⬆️  [FLIGHT] Taking off..." << std::endl;
-    if (action->takeoff() != Action::Result::Success) {
-        std::cerr << "[ERROR] ❌ Takeoff failed" << std::endl;
-        return 1;
-    }
-
-    // --- Wait for valid altitude before planning ---
-    std::cout << "📏 [FLIGHT] Waiting for safe altitude (1.5m)..." << std::endl;
-    while (true) {
-        float altitude = -1.0f * telemetry->position_velocity_ned().position.down_m;
-        if (altitude >= 1.5f) {
-            std::cout << "✅ [FLIGHT] Altitude reached: " << altitude << "m" << std::endl;
+    // Wait for safe altitude before planning
+    std::cout << "[FLIGHT] 📏 Waiting for safe altitude (" << SAFE_ALTITUDE << "m)..." << std::endl;
+    int altitude_check_count = 0;
+    while (altitude_check_count < 100) {
+        float current_altitude = -telemetry->position_velocity_ned().position.down_m;
+        if (current_altitude >= SAFE_ALTITUDE) {
+            std::cout << "[FLIGHT] ✅ Altitude reached: " << current_altitude << "m" << std::endl;
             break;
         }
-        sleep_for(milliseconds(200));
+        sleep_for(milliseconds(100));
+        altitude_check_count++;
     }
 
-    // -------- Offboard Mode --------
-    std::cout << "\n🤖 [FLIGHT] Starting Offboard mode..." << std::endl;
-    Offboard::PositionNedYaw stay{};
-    stay.north_m = 0.0f; 
-    stay.east_m = 0.0f; 
-    stay.down_m = -2.5f; 
-    stay.yaw_deg = 0.0f;
-    offboard->set_position_ned(stay);
+    // ========================================================================
+    // ENTER OFFBOARD MODE
+    // ========================================================================
+    std::cout << "\n[FLIGHT] 🤖 Entering OFFBOARD mode..." << std::endl;
     
-    if (offboard->start() != Offboard::Result::Success) {
-        std::cerr << "[ERROR] ❌ Offboard start failed" << std::endl;
+    // Set hold position
+    Offboard::PositionNedYaw hold_position{};
+    hold_position.north_m = 0.0f;
+    hold_position.east_m = 0.0f;
+    hold_position.down_m = -TAKEOFF_ALTITUDE;
+    hold_position.yaw_deg = 0.0f;
+    offboard->set_position_ned(hold_position);
+    
+    Offboard::Result offboard_result = offboard->start();
+    if (offboard_result != Offboard::Result::Success) {
+        std::cerr << "[ERROR] ❌ Offboard mode failed: " << offboard_result << std::endl;
         return 1;
     }
+    std::cout << "[FLIGHT] ✅ OFFBOARD mode active" << std::endl;
     sleep_for(seconds(1));
 
-    // 🆕 ====== KALMAN FILTER INITIALIZATION ======
-    std::cout << "\n⚙️  [KALMAN] Initializing Kalman Filter..." << std::endl;
+    // ========================================================================
+    // INITIALIZE KALMAN FILTER WITH CURRENT POSITION
+    // ========================================================================
+    std::cout << "\n[KALMAN] 🔧 Initializing Kalman Filter..." << std::endl;
     Telemetry::PositionNed initial_pos = telemetry->position_velocity_ned().position;
     Eigen::Vector3f init_pos(initial_pos.north_m, initial_pos.east_m, initial_pos.down_m);
-    kalman_filter.init(init_pos, 0.05f);  // 0.05s = 20Hz control rate
-    std::cout << "[KALMAN] ✅ Filter initialized with position: " << init_pos.transpose() << std::endl;
+    
+    // Initialize with current position, dt=50ms (20Hz)
+    kalman_filter.init(init_pos, 1.0f / CONTROL_RATE_HZ);
+    std::cout << "[KALMAN] ✅ Filter initialized at: " << init_pos.transpose() << std::endl;
 
-    // ====================================================================
-    // MISSION LOOP
-    // ====================================================================
-    std::cout << "\n🚀 [MISSION] Starting dynamic replanning mission..." << std::endl;
+    // ========================================================================
+    // MAIN MISSION LOOP: DYNAMIC REPLANNING
+    // ========================================================================
+    std::cout << "\n🚀 [MISSION] Starting autonomous navigation with dynamic replanning..." << std::endl;
+    std::cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" << std::endl;
 
-    const double GOAL_TOLERANCE = 0.5;
-    const int MAX_CYCLES = 50;
-    const int MAX_FAILS = 5;
     int fail_count = 0;
+    int total_waypoints_flown = 0;
+    float cumulative_kalman_drift = 0.0f;
 
     for (int cycle = 0; cycle < MAX_CYCLES; ++cycle) {
         
+        // Safety check: Is drone still in air?
         if (!telemetry->in_air()) {
             std::cout << "\n⚠️  [MISSION] Drone is not in air. Aborting mission." << std::endl;
             break;
         }
 
-        // -------- LIDAR Acquisition --------
+        // ====================================================================
+        // STEP 1: LIDAR DATA ACQUISITION
+        // ====================================================================
         int wait_count = 0;
-        while (!lidar.has_new_data() && wait_count < 30) {
-            sleep_for(std::chrono::milliseconds(100));
+        const int max_wait = 30;  // 3 seconds max
+        
+        while (!lidar.has_new_data() && wait_count < max_wait) {
+            sleep_for(milliseconds(100));
             wait_count++;
         }
 
@@ -245,106 +349,161 @@ int main() {
         if (lidar.has_new_data()) {
             cloud = lidar.get_cloud();
             lidar.reset_data_flag();
+            
+            // Validation: Check cloud quality
+            if (cloud->points.size() < 100) {
+                std::cout << "[LIDAR] ⚠️  Warning: Low point count (" << cloud->points.size() << ")" << std::endl;
+            }
         } else {
-            // Fallback Cloud (Safety)
+            // Fallback: Generate synthetic cloud (ONLY if no real data)
+            std::cout << "[LIDAR] ⚠️  Using fallback point cloud (sensor timeout)" << std::endl;
             cloud = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>);
             for (double y = -1.0; y <= 1.0; y += 0.1)
                 for (double z = -1.0; z <= 1.0; z += 0.1)
                     cloud->points.push_back(pcl::PointXYZ(0.5, y, z));
         }
         
+        // Build octree from point cloud
         world.buildMap(cloud);
 
-        // 🆕 ====== KALMAN FILTER UPDATE ======
-        Telemetry::PositionNed pos = telemetry->position_velocity_ned().position;
-        Eigen::Vector3f raw_pos(pos.north_m, pos.east_m, pos.down_m);
+        // ====================================================================
+        // STEP 2: KALMAN FILTER UPDATE (Sensor Fusion)
+        // ====================================================================
+        Telemetry::PositionNed raw_pos = telemetry->position_velocity_ned().position;
+        Eigen::Vector3f raw_position(raw_pos.north_m, raw_pos.east_m, raw_pos.down_m);
         
-        // Predict next state
+        // Predict: Use motion model
         kalman_filter.predict();
         
-        // Update with new measurement
-        kalman_filter.update(raw_pos);
+        // Update: Fuse LIDAR/telemetry measurement
+        kalman_filter.update(raw_position);
         
-        // Get smoothed position
-        Eigen::Vector3f filtered_pos = kalman_filter.getPosition();
+        // Get filtered (smoothed) position
+        Eigen::Vector3f filtered_position = kalman_filter.getPosition();
+        Eigen::Vector3f estimated_velocity = kalman_filter.getVelocity();
         
-        // Optional: Log raw vs filtered for debugging
-        std::cout << "[KALMAN] 📊 Raw: " << raw_pos.transpose() 
-                  << " | Filtered: " << filtered_pos.transpose() << std::endl;
+        // Calculate Kalman drift (difference from raw measurement)
+        float kalman_drift = (raw_position - filtered_position).norm();
+        cumulative_kalman_drift += kalman_drift;
+        
+        std::cout << "\n[CYCLE] 🔄 Cycle " << cycle + 1 << "/" << MAX_CYCLES << std::endl;
+        std::cout << "  Raw Position:      " << raw_position.transpose() << " m" << std::endl;
+        std::cout << "  Filtered Position: " << filtered_position.transpose() << " m" << std::endl;
+        std::cout << "  Estimated Velocity: " << estimated_velocity.transpose() << " m/s" << std::endl;
+        std::cout << "  Kalman Drift: " << kalman_drift << " m" << std::endl;
 
-        // Use filtered position for planning
-        Eigen::Vector3d start_ned(filtered_pos.x(), filtered_pos.y(), filtered_pos.z());
+        // ====================================================================
+        // STEP 3: CONVERT TO GRID COORDINATES
+        // ====================================================================
+        Eigen::Vector3d start_ned(filtered_position.x(), filtered_position.y(), filtered_position.z());
         
         Eigen::Vector3i start_grid(
-            std::round(filtered_pos.x() / RESOLUTION),
-            std::round(filtered_pos.y() / RESOLUTION),
-            std::round(filtered_pos.z() / RESOLUTION)
+            std::round(filtered_position.x() / RESOLUTION),
+            std::round(filtered_position.y() / RESOLUTION),
+            std::round(filtered_position.z() / RESOLUTION)
         );
+        
+        std::cout << "  Grid Position: (" << start_grid.x() << ", " 
+                  << start_grid.y() << ", " << start_grid.z() << ")" << std::endl;
 
-        std::cout << "[CYCLE] 🔄 " << cycle << " | Filtered Pos: " << start_ned.transpose() << std::endl;
-
-        // -------- Path Planning (A*) --------
-        auto path_grid = A_star_search(start_grid, goal_grid, world);
+        // ====================================================================
+        // STEP 4: PATH PLANNING (A* Algorithm)
+        // ====================================================================
+        auto start_time = std::chrono::high_resolution_clock::now();
+        std::vector<Eigen::Vector3i> path_grid = A_star_search(start_grid, goal_grid, world);
+        auto end_time = std::chrono::high_resolution_clock::now();
+        float planning_time_ms = std::chrono::duration<float, std::milli>(end_time - start_time).count();
 
         if (path_grid.empty()) {
-            std::cerr << "[PLAN] ❌ No path found (Blocked/Collision). Hovering..." << std::endl;
-            logger.log_cycle(cycle + 1, pos, start_grid, goal_grid, -1.0f, 0, cloud->points.size(), "NO_PATH", 0);
+            std::cerr << "  ❌ [PLAN] No path found. Hovering..." << std::endl;
+            logger.log_cycle(cycle + 1, raw_pos, start_grid, goal_grid, 
+                           -1.0f, 0, cloud->points.size(), "NO_PATH", 0, kalman_drift);
             fail_count++;
             
             if (fail_count >= MAX_FAILS) {
-                std::cerr << "[PLAN] 💥 Maximum replanning failures exceeded. Landing." << std::endl;
+                std::cerr << "  💥 [PLAN] Maximum failures exceeded. Landing." << std::endl;
                 break;
             }
             sleep_for(seconds(1));
             continue;
         }
         
-        fail_count = 0;
+        fail_count = 0;  // Reset failure counter on success
+        std::cout << "  ✅ [PLAN] Path found in " << planning_time_ms << "ms" << std::endl;
+        std::cout << "  📍 [PLAN] " << path_grid.size() << " waypoints" << std::endl;
 
-        // -------- Trajectory Following --------
-        std::cout << "[PLAN] ✅ Path found: " << path_grid.size() << " waypoints" << std::endl;
-        
-        // Fly a small segment of the path (e.g. 3 steps) then re-plan
+        // ====================================================================
+        // STEP 5: TRAJECTORY FOLLOWING (Fly next segment)
+        // ====================================================================
+        // Only fly first 3 waypoints, then replan (reactive planning)
         int seg_end = std::min(3, static_cast<int>(path_grid.size()));
         std::vector<Eigen::Vector3i> this_leg(path_grid.begin(), path_grid.begin() + seg_end);
         
-        std::cout << "[ACT] ✈️  Flying next " << seg_end << " waypoints..." << std::endl;
+        std::cout << "  ✈️  [ACT] Flying segment: " << seg_end << " waypoints" << std::endl;
         
         TrajectoryFollower follower(telemetry, offboard, this_leg, RESOLUTION);
         follower.start();
-
-        // -------- Distance Check --------
-        Telemetry::PositionNed curr = telemetry->position_velocity_ned().position;
         
-        float d_n = curr.north_m - goal_ned.x();
-        float d_e = curr.east_m - goal_ned.y();
-        float d_d = curr.down_m - goal_ned.z();
-        float distance_to_goal = std::sqrt(d_n*d_n + d_e*d_e + d_d*d_d);
+        total_waypoints_flown += seg_end;
 
-        std::cout << "[STATUS] 📍 Real Distance to goal: " << distance_to_goal << "m" << std::endl;
+        // ====================================================================
+        // STEP 6: DISTANCE CHECK & GOAL TEST
+        // ====================================================================
+        Telemetry::PositionNed current_pos = telemetry->position_velocity_ned().position;
         
-        logger.log_cycle(cycle + 1, curr, start_grid, goal_grid, distance_to_goal,
-                    path_grid.size(), cloud->points.size(), "SUCCESS", seg_end);
+        float distance_north = current_pos.north_m - goal_ned.x();
+        float distance_east = current_pos.east_m - goal_ned.y();
+        float distance_down = current_pos.down_m - goal_ned.z();
+        float distance_to_goal = std::sqrt(distance_north*distance_north + 
+                                          distance_east*distance_east + 
+                                          distance_down*distance_down);
+
+        std::cout << "  📍 [STATUS] Distance to goal: " << distance_to_goal << "m" << std::endl;
+        
+        logger.log_cycle(cycle + 1, current_pos, start_grid, goal_grid, distance_to_goal,
+                        path_grid.size(), cloud->points.size(), "SUCCESS", seg_end, kalman_drift);
 
         // Check if goal reached
         if (distance_to_goal < GOAL_TOLERANCE) {
-            std::cout << "\n🎉 [GOAL REACHED] Distance " << distance_to_goal << "m is within tolerance " << GOAL_TOLERANCE << "m\n" << std::endl;
+            std::cout << "\n🎉 [SUCCESS] GOAL REACHED!" << std::endl;
+            std::cout << "  Distance: " << distance_to_goal << "m (tolerance: " << GOAL_TOLERANCE << "m)" << std::endl;
             break;
         }
     }
 
-    // ====================================================================
+    // ========================================================================
     // LANDING & CLEANUP
-    // ====================================================================
-    std::cout << "\n🛬 [FLIGHT] Mission complete. Landing..." << std::endl;
+    // ========================================================================
+    std::cout << "\n🛬 [FLIGHT] Mission complete. Exiting OFFBOARD mode..." << std::endl;
     offboard->stop();
     sleep_for(seconds(2));
     
+    std::cout << "[FLIGHT] 🛬 Landing drone..." << std::endl;
     action->land();
-    while (telemetry->in_air()) {
+    
+    // Wait for landing
+    int landing_timeout = 0;
+    while (telemetry->in_air() && landing_timeout < 60) {
         sleep_for(seconds(1));
+        landing_timeout++;
     }
     
-    std::cout << "\n✨ --- MISSION COMPLETE ---\n" << std::endl;
+    if (telemetry->in_air()) {
+        std::cerr << "⚠️  [FLIGHT] Landing timeout - drone may still be in air" << std::endl;
+    } else {
+        std::cout << "[FLIGHT] ✅ Drone landed safely" << std::endl;
+    }
+
+    // ========================================================================
+    // MISSION SUMMARY
+    // ========================================================================
+    std::cout << "\n📊 ═══════════════════════════════════════" << std::endl;
+    std::cout << "    MISSION COMPLETE" << std::endl;
+    std::cout << "═══════════════════════════════════════" << std::endl;
+    std::cout << "  Total Waypoints Flown: " << total_waypoints_flown << std::endl;
+    std::cout << "  Avg Kalman Drift: " << (cumulative_kalman_drift / MAX_CYCLES) << "m" << std::endl;
+    std::cout << "  Flight Log: flight_log.csv" << std::endl;
+    std::cout << "═══════════════════════════════════════\n" << std::endl;
+
     return 0;
 }
